@@ -1,0 +1,112 @@
+/* ========== GLOBAL STYLES ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ========== PRODUCT CAROUSEL ========== */
+.product-carousel {
+  text-align: center;
+  padding: 40px 0 10px 0;
+}
+
+.product-carousel h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-carousel p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: transform 1s ease-in-out;
+  padding: 10px 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.product-item {
+  flex: 0 0 calc(25% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 220px;
+}
+
+.product-item h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.product-item p {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-btn:hover {
+  color: #999;
+}
+
+.carousel-btn.left {
+  left: 20px;
+}
+
+.carousel-btn.right {
+  right: 20px;
+}
+
+

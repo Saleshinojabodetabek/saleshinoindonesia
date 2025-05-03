@@ -1,0 +1,102 @@
+/* Keunggulan Kami */
+.advantages {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+.advantages-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.advantages-image img {
+  width: 500px; /* atur sesuai kebutuhan, misalnya 200px, 250px, dll */
+  height: auto;
+  object-fit: cover;
+}
+
+.advantages-content {
+  max-width: 480px; /* diperkecil dari 600px */
+  margin: 0 auto; /* posisi di tengah */
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.advantages-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #0a1950;
+  margin-bottom: 24px;
+}
+
+.advantage-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.advantage-item .icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.advantage-item h4 {
+  font-size: 20px;
+  color: #0a1950;
+  margin: 0 0 6px 0;
+}
+
+.advantage-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+.advantages-container {
+  flex-wrap: nowrap; /* ini mencegah elemen turun ke bawah */
+}
+
+.advantage-item {
+  justify-content: center;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .advantages-container {
+    flex-direction: column; /* atur agar konten dan gambar menumpuk vertikal */
+    gap: 30px;
+  }
+
+  .advantages-image img {
+    width: 100%; /* gambar memenuhi lebar container */
+    max-width: 450px; /* batas maksimal agar tidak terlalu besar */
+    margin: 0 auto; /* center secara horizontal */
+    display: block;
+  }
+
+  .advantages-content {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .advantages-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .advantage-item h4 {
+    font-size: 18px;
+  }
+
+  .advantage-item p {
+    font-size: 15px;
+  }
+}
