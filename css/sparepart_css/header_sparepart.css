@@ -58,3 +58,38 @@ header {
   font-weight: 300;
   color: #f1f5f9;
 }
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh; /* Kurangi tinggi di layar kecil */
+    background-position: center;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2rem; /* Ukuran judul lebih kecil */
+    margin-bottom: 10px;
+  }
+
+  .about-hero-content p {
+    font-size: 1rem; /* Ukuran paragraf lebih kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    height: 40vh; /* Lebih pendek di layar HP kecil */
+    padding: 20px;
+  }
+
+  .about-hero-content {
+    padding: 0 10px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-hero-content p {
+    font-size: 0.95rem;
+  }
+}
