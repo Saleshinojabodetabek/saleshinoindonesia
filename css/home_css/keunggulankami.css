@@ -71,15 +71,12 @@
 
 @media (max-width: 600px) {
   .advantages-container {
-    flex-direction: column; /* atur agar konten dan gambar menumpuk vertikal */
+    flex-direction: column;
     gap: 30px;
   }
 
-  .advantages-image img {
-    width: 100%; /* gambar memenuhi lebar container */
-    max-width: 450px; /* batas maksimal agar tidak terlalu besar */
-    margin: 0 auto; /* center secara horizontal */
-    display: block;
+  .advantages-image {
+    display: none; /* Gambar disembunyikan saat mobile */
   }
 
   .advantages-content {
