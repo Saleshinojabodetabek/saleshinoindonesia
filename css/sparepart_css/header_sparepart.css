@@ -93,3 +93,36 @@ header {
     font-size: 0.95rem;
   }
 }
+
+/* Cta Section */
+.cta-full {
+  width: 100%;
+  background-color: #ffb400;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-full h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.cta-full-button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 18px;
+  color: #000;
+  border: 2px solid #000;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.cta-full-button:hover {
+  background-color: #000;
+  color: #fff;
+}

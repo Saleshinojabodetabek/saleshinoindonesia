@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/contact_css/header_contact.css" />
-    <link rel="stylesheet" href="css/contact_css/contact.css" />
+    <link rel="stylesheet" href="css/product_css/header_product.css" />
+    <link rel="stylesheet" href="css/product_css/product.css" />
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -50,63 +50,126 @@
       </div>
     </header>
 
-    <!-- Contact Us Header Section -->
-    <section
-      class="about-hero"
-      style="
-        background-image: url('img/contact.jpeg');
-        background-size: cover;
-        background-position: center;
-      "
-    >
-      <div class="about-hero-overlay">
-        <div class="about-hero-content container">
-          <h1>Contact Us</h1>
+    <!-- Hero -->
+    <section class="hero">
+        <img
+          src="img/product/hydraulic.jpg"
+          alt="Header Background"
+          style="
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+          "
+        />
+        <div class="container">
+          <h2>Hydraulic</h2>
           <p>
-            Jika Anda membutuhkan bantuan atau informasi lebih lanjut, kami siap
-            membantu Anda dengan solusi terbaik. Hubungi kami sekarang!.
+            Kami menyediakan sparepart hydraulic berkualitas tinggi untuk memastikan alat berat Anda bekerja dengan performa terbaik, efisien, dan tahan lama.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <div class="wrapper">
-      <h2>Contact Us</h2>
-      <p>Fill out the form below to get in touch with us.</p>
-
-      <div class="container">
-        <div class="contact-form">
-          <form>
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" />
-
-            <label for="phone">Your Phone Number:</label>
-            <input type="tel" id="phone" name="phone" />
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="6"></textarea>
-
-            <button type="submit">
-              <strong>Submit</strong>
-            </button>
-          </form>
-        </div>
-
-        <div class="map1">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6806696924154!2d106.77030197355363!3d-6.173490760493029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7d546233a65%3A0x12f0fd11a90e435!2sJl.%20Asia%20Baru%2C%20Kedoya%20Utara%2C%20Kec.%20Kebon%20Jeruk%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2011510!5e0!3m2!1sen!2sid!4v1700000000000"
-            width="100%"
-            height="200"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+          <a
+            href="https://wa.me/+6281213838567?text=Halo%20Saya%20Ingin%20Menanyakan%20Tentang%20Produk%20Hydraulic"
+            class="btn btn-contact"
+            >Pesan Sekarang</a
           >
-          </iframe>
         </div>
+      </section>
+
+    <!-- Service -->
+<section class="service-section">
+    <!-- Baris 1: Gambar di kanan -->
+    <div class="service-row">
+      <div class="service-text">
+        <h2>Hydraulic Component</h2>
+        <p>
+            PT Asiatek Indo Makmur memiliki semua referensi untuk operasi mesin Anda. Untuk informasi lebih lanjut, konsultasikan dengan Layanan Teknik kami.
+        </p>
+      </div>
+      <div class="service-image">
+        <img src="img/product/hdr1.jpg" alt="Repair Image" />
       </div>
     </div>
+  
+    <!-- Baris 2: Gambar di kiri (pakai reverse) -->
+    <div class="service-row reverse">
+      <div class="service-text">
+        <h2>Repair Kits</h2>
+        <p>
+            Menggabungkan teknologi paling canggih di industri, baik dalam desain maupun material, sehingga silinder hidrolik Anda mendapatkan daya hidrolik dan keandalan maksimal.
+        </p>
+      </div>
+      <div class="service-image">
+        <img src="img/product/hdr8.jpg" alt="Technical Center" />
+      </div>
+    </div>
+  
+    <!-- Baris 3: Gambar di kanan -->
+    <div class="service-row">
+      <div class="service-text">
+        <h2>Cyclinder</h2>
+        <p>
+            Komponen lengkap dan suku cadang untuk silinder angkat, tilting, kemudi, suspensi, serta bantalan sferis, segel, dan setiap komponen individual.
+        </p>
+      </div>
+      <div class="service-image">
+        <img src="img/product/hdr3.jpg" alt="Emergency Service" />
+      </div>
+    </div>
+  
+    <!-- Baris 4: Gambar di kiri (pakai reverse) -->
+    <div class="service-row reverse">
+      <div class="service-text">
+        <h2>Pumps and Motors</h2>
+        <p>
+            Beragam motor hidrolik, pompa, dan komponen-komponennya, baik tipe piston, gigi, atau kartrid. Dirancang dan diproduksi untuk memenuhi kebutuhan tekanan dan aliran dari sistem hidrolik terbaru.
+        </p>
+      </div>
+      <div class="service-image">
+        <img src="img/product/hdr4.jpg" alt="Genuine Parts" />
+      </div>
+    </div>
+  
+    <!-- Baris 5: Gambar di kanan -->
+    <div class="service-row">
+      <div class="service-text">
+        <h2>Valves and Accumulators</h2>
+        <p>
+            Katup, regulator, dan akumulator dengan spesifikasi yang tepat untuk operasi sistem yang optimal.
+        </p>
+      </div>
+      <div class="service-image">
+        <img src="img/product/hdr5.jpg" alt="Emergency Service" />
+      </div>
+    </div>
+  
+    <!-- Baris 6: Gambar di kiri (pakai reverse) -->
+    <div class="service-row reverse">
+      <div class="service-text">
+        <h2>Hoses and assemblies</h2>
+        <p>
+            Selang tekanan tinggi, sedang, dan rendah dengan fleksibilitas tinggi dan tahan terhadap abrasi, coupling, serta semua jenis komponen. Tersedia berbagai rakitan selang yang dapat dipasang dan tidak dapat dipasang untuk merek-merek terkemuka di industri, siap untuk pengiriman segera.
+        </p>
+      </div>
+      <div class="service-image">
+        <img src="img/product/hdr6.jpg" alt="Genuine Parts" />
+      </div>
+    </div>
+  
+    <!-- Baris 7: Gambar di kanan -->
+    <div class="service-row">
+      <div class="service-text">
+        <h2>Hydraulic Filters</h2>
+        <p>
+            Filter berkualitas untuk menjaga sistem hidrolik tetap bersih, mengurangi keausan dan kebutuhan perbaikan, serta meningkatkan kinerja dan produktivitas.
+        </p>
+      </div>
+      <div class="service-image">
+        <img src="img/product/hdr7.jpg" alt="Emergency Service" />
+      </div>
+    </div>
+  </section>
+  
 
     <!-- Footer -->
     <footer class="site-footer">

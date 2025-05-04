@@ -128,7 +128,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger-menu");
   const navLinks = document.querySelector(".nav.links");
 
-  hamburger.addEventListener("click", () => {
+  // Toggle menu saat hamburger diklik
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation(); // Mencegah event bubbling agar tidak langsung tertutup
     navLinks.classList.toggle("active");
+  });
+
+  // Klik di luar nav & hamburger akan menutup menu
+  document.addEventListener("click", (e) => {
+    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+      navLinks.classList.remove("active");
+    }
   });
 });

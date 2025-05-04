@@ -1,0 +1,170 @@
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+/* Hero */
+.hero {
+  background: url("/img/header.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .container {
+  background-color: rgba(0, 0, 0, 0.6); /* Transparan gelap */
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 800px;
+  color: #fff;
+}
+
+.contact-item {
+  margin-top: 16px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(8, 9, 0, 0.5); /* lapisan gelap semi-transparan */
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .container .btn {
+  margin-top: 24px;
+}
+
+.btn {
+  background-color: #facc15;
+  color: #000; /* ubah ke hitam */
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 24px;
+}
+
+.btn-contact {
+  color: #000 !important; /* Warna hitam, pakai !important jika perlu menimpa */
+}
+
+.btn:hover {
+  background-color: #eab308;
+}
+
+/* Hero 1 */
+.hero1 {
+  background: url("/img/pwb.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero1 .container {
+  background-color: rgba(0, 0, 0, 0.6); /* Transparan gelap */
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 800px;
+  color: #fff;
+}
+
+.contact-item {
+  margin-top: 16px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(8, 9, 0, 0.5); /* lapisan gelap semi-transparan */
+  z-index: 1;
+}
+
+.hero1 .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero1 .container .btn {
+  margin-top: 24px;
+}
+
+.btn {
+  background-color: #facc15;
+  color: #1e3a8a;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 24px; /* Tambahkan jarak atas */
+}
+
+.btn:hover {
+  background-color: #eab308;
+}
