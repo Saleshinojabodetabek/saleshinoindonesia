@@ -44,3 +44,26 @@
   object-fit: contain;
   max-height: 220px;
 }
+
+@media (max-width: 768px) {
+  .applications-carousel .carousel-wrapper {
+    padding: 0 20px;
+  }
+
+  .applications-carousel .carousel {
+    gap: 16px;
+  }
+
+  .applications-carousel .product-item {
+    flex: 0 0 100%; /* Satu item penuh lebar layar */
+    padding: 16px;
+  }
+
+  .applications-carousel .product-item img {
+    max-height: 300px; /* Gambar lebih besar */
+  }
+
+  .applications-carousel p {
+    color: white; /* Pastikan teks bisa terbaca jika background gelap */
+  }
+}
