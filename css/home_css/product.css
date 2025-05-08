@@ -117,8 +117,19 @@
 
 /* ========== DESCRIPTION BELOW CAROUSEL ========== */
 .product-description {
-  padding: 10px 20px 20px;
-  font-size: 14px;
-  color: #444;
+  padding: 20px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.8;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.highlight-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
   line-height: 1.6;
 }

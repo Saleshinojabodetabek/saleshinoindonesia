@@ -1,0 +1,66 @@
+.contact-container {
+  max-width: 1210px;
+  margin: 40px auto;
+}
+
+.contact-tabs {
+  background: linear-gradient(45deg, #a2780d, #d4af37);
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.contact-tabs .tab {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+}
+
+.contact-info {
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  border-radius: 0 0 3px 3px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .contact-item {
+    width: 100%;
+  }
+}
