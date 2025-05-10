@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/home_css/blogcard.css" />
     <link rel="stylesheet" href="css/home_css/keunggulankami.css" />
     <link rel="stylesheet" href="css/home_css/contact.css" />
+    <link rel="stylesheet" href="css/home_css/ourclient.css" />
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -121,7 +122,7 @@
           </div>
           <div class="image">
             <img
-              src="img/companyprofile.png"
+              src="img/cpprofile.png"
               alt="Gedung PT Asta Mitra Industri"
             />
           </div>
@@ -350,57 +351,57 @@
       </div>
     </div>
   </div>
-  
-  <!-- Aplication Section -->
-  <section
-  class="applications-carousel"
-  style="
-    background-image: url('img/bgpr.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-  "
->
-  <div class="carousel-wrapper">
-    <button class="carousel-btn left">&#10094;</button>
 
-    <div class="carousel">
-      <div class="product-item">
-        <img src="img/aplikasi/Hyundai.png" alt="Undercarriage" />
-      </div>
-      <div class="product-item">
-        <img src="img/aplikasi/Hitachi.png" alt="Hardware" />
-      </div>
-      <div class="product-item">
-        <img src="img/aplikasi/Caterpillar.png" alt="Chasis" />
-      </div>
-      <div class="product-item">
-        <img src="img/aplikasi/Kobelco.png" alt="Lights" />
-      </div>
-      <div class="product-item">
-        <img src="img/aplikasi/Komatsu.png" alt="Electrical Parts" />
-      </div>
-      <div class="product-item">
-        <img src="img/aplikasi/SANY.png" alt="Engine" />
-      </div>
-      <div class="product-item">
-        <img src="img/aplikasi/Zoomlion.png" alt="Hydraulics" />
-      </div>
-      <div class="product-item">
-        <img src="img/aplikasi/XCMG.png" alt="Filters" />
-      </div>
-    </div>
-    <button class="carousel-btn right">&#10095;</button>
-  </div>
-</section>
+          <!-- Our Client -->
+          <section class="our-clients-section">
+            <div class="title">
+              <h2>Our Clients</h2>
+            </div>
+            <div class="clients-grid">
+              <!-- Ganti src dengan nama file sesuai folder images Anda -->
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Popular Kaca" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Best Label" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Sheraton" onclick="openModal(this.src)" /></div>
+          
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Packing Material Indonesia" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="IPW" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Yayasan Del" onclick="openModal(this.src)" /></div>
+          
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Merak Jaya Beton" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Meganusa" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Hartotrans" onclick="openModal(this.src)" /></div>
+          
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Client 10" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Client 11" onclick="openModal(this.src)" /></div>
+              <div class="client-item"><img src="img/PT-Popular-Kaca-Utama.png" alt="Client 12" onclick="openModal(this.src)" /></div>
+            </div>
+          </section>
+          
+          <!-- Modal -->
+          <div id="modal" class="modal" onclick="closeModal()">
+            <img id="modal-img" class="modal-content" />
+          </div>
+          
+          <script>
+            function openModal(src) {
+              document.getElementById("modal").style.display = "flex";
+              document.getElementById("modal-img").src = src;
+            }
+          
+            function closeModal() {
+              document.getElementById("modal").style.display = "none";
+            }
+          </script>
+  
   <!-- Keunggulan Kami -->
   <section class="advantages">
-      <div class="advantages-container">
+    <div class="advantages-container">
         <div class="advantages-image">
           <img src="img/worker.png" alt="Worker Image" />
         </div>
         <div class="advantages-content">
           <h2>Keunggulan Kami</h2>
-
+          
           <div class="advantage-item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -409,14 +410,14 @@
               viewBox="0 0 24 24"
               stroke="#0a1950"
               stroke-width="2"
-            >
+              >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M5 13l4 4L19 7"
               />
             </svg>
-
+            
             <div>
               <h4>Jaminan Mutu</h4>
               <p>
@@ -434,7 +435,7 @@
               viewBox="0 0 24 24"
               stroke="#0a1950"
               stroke-width="2"
-            >
+              >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -449,7 +450,7 @@
               </p>
             </div>
           </div>
-
+          
           <div class="advantage-item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -458,13 +459,13 @@
               viewBox="0 0 24 24"
               stroke="#0a1950"
               stroke-width="2"
-            >
+              >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zm0 0v13m-3.5-3.5L12 21l3.5-3.5"
-              />
-            </svg>
+                />
+              </svg>
             <div>
               <h4>Usaha Resmi</h4>
               <p>
@@ -473,17 +474,17 @@
               </p>
             </div>
           </div>
-
+          
           <div class="advantage-item">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="#0a1950"
-              stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#0a1950"
+            stroke-width="2"
             >
-              <path
+            <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M9 17H4a1 1 0 01-1-1V6a1 1 0 011-1h11a1 1 0 011 1v10a1 1 0 01-1 1h-1m5 0a2 2 0 100-4h-1m-4 4h6m-1 0a2 2 0 110 4 2 2 0 010-4zM6 17a2 2 0 100 4 2 2 0 000-4z"
@@ -501,8 +502,50 @@
       </div>
     </section>
 
-
-
+    
+    
+    <!-- Aplication Section -->
+    <section
+    class="applications-carousel"
+    style="
+      background-image: url('img/bgpr.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    "
+  >
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left">&#10094;</button>
+  
+      <div class="carousel">
+        <div class="product-item">
+          <img src="img/aplikasi/Hyundai.png" alt="Undercarriage" />
+        </div>
+        <div class="product-item">
+          <img src="img/aplikasi/Hitachi.png" alt="Hardware" />
+        </div>
+        <div class="product-item">
+          <img src="img/aplikasi/Caterpillar.png" alt="Chasis" />
+        </div>
+        <div class="product-item">
+          <img src="img/aplikasi/Kobelco.png" alt="Lights" />
+        </div>
+        <div class="product-item">
+          <img src="img/aplikasi/Komatsu.png" alt="Electrical Parts" />
+        </div>
+        <div class="product-item">
+          <img src="img/aplikasi/SANY.png" alt="Engine" />
+        </div>
+        <div class="product-item">
+          <img src="img/aplikasi/Zoomlion.png" alt="Hydraulics" />
+        </div>
+        <div class="product-item">
+          <img src="img/aplikasi/XCMG.png" alt="Filters" />
+        </div>
+      </div>
+      <button class="carousel-btn right">&#10095;</button>
+    </div>
+  </section>
+    
     <!-- Blog Section -->
     <section class="blog-section">
       <div class="container">
