@@ -22,7 +22,7 @@
 .product-carousel {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* bayangan lebih tebal dan gelap */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /* bayangan lebih tebal dan gelap */
   padding: 40px 20px;
   margin: 40px auto;
   max-width: 1200px;
