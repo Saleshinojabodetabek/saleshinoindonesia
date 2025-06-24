@@ -16,6 +16,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  align-items: stretch;
 }
 
 .client-item {
@@ -42,22 +43,25 @@
   border-radius: 12px;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 120px;
+  height: 150px; /* Naikkan dari 120px ke 150px */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.client-box img {
+  max-height: 120px; /* Naikkan dari 60px ke 90px */
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .client-box:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-}
-
-.client-box img {
-  max-height: 60px;
-  max-width: 100%;
-  object-fit: contain;
 }
 
 /* Modal Styles */
