@@ -115,7 +115,12 @@
     margin-bottom: 20px;
   }
 
-  .client-item img {
-    max-height: 50px;
+  .client-box {
+    height: 180px; /* Tambah tinggi box saat mobile */
+    padding: 30px; /* Lebih banyak padding */
+  }
+
+  .client-box img {
+    max-height: 100px; /* Lebih besar dan jelas */
   }
 }
