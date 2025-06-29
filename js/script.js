@@ -141,3 +141,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Mencegah form melakukan submit ke server
+
+  // Notifikasi sederhana
+  alert("Pesan berhasil terkirim!");
+
+  // Opsional: Reset form agar kosong kembali
+  this.reset();
+});
