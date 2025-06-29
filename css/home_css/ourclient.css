@@ -116,11 +116,17 @@
   }
 
   .client-box {
-    height: 180px; /* Tambah tinggi box saat mobile */
-    padding: 30px; /* Lebih banyak padding */
+    height: 220px; /* Tambah tinggi box agar tidak terasa sempit */
+    padding: 30px; /* Padding cukup */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .client-box img {
-    max-height: 100px; /* Lebih besar dan jelas */
+    max-height: 120px; /* Ukuran logo lebih besar */
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 }
