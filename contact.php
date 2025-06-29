@@ -1,33 +1,36 @@
 <?php
-header('Content-Type: text/plain');
-
+// Konfigurasi database
 $host = "localhost";
-$user = "u429834259_admin";
+$username = "u429834259_admin";
 $password = "@Adminasiatekindo123";
 $database = "u429834259_asiatekindo";
 
-$conn = new mysqli($host, $user, $password, $database);
+// Buat koneksi
+$conn = new mysqli($host, $username, $password, $database);
+
+// Cek koneksi
 if ($conn->connect_error) {
-    http_response_code(500);
-    echo "Koneksi gagal: " . $conn->connect_error;
-    exit();
+    die("Koneksi gagal: " . $conn->connect_error);
 }
 
-$name = $_POST['name'] ?? '';
-$phone = $_POST['phone'] ?? '';
-$message = $_POST['message'] ?? '';
+// Ambil data dari form
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
-$sql = "INSERT INTO contact_messages (name, phone, message) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $name, $phone, $message);
+// Lindungi dari SQL Injection
+$name = $conn->real_escape_string($name);
+$phone = $conn->real_escape_string($phone);
+$message = $conn->real_escape_string($message);
 
-if ($stmt->execute()) {
+// Simpan ke database
+$sql = "INSERT INTO contact_messages (name, phone, message) VALUES ('$name', '$phone', '$message')";
+
+if ($conn->query($sql) === TRUE) {
     echo "Pesan Anda berhasil dikirim.";
 } else {
-    http_response_code(500);
-    echo "Gagal mengirim pesan.";
+    echo "Terjadi kesalahan: " . $conn->error;
 }
 
-$stmt->close();
 $conn->close();
 ?>
