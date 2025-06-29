@@ -1,28 +1,35 @@
 <?php
-// Ambil data dari form
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
-
-// Koneksi ke database
+// Konfigurasi database
 $host = "localhost";
-$user = "u429834259_admin"; // Ganti dengan username database kamu
+$username = "u429834259_admin";
 $password = "@Adminasiatekindo123";
-$dbname = "u429834259_asiatekindo"; // Ganti dengan nama DB kamu
+$database = "u429834259_asiatekindo";
 
-$conn = new mysqli($host, $user, $password, $dbname);
+// Buat koneksi
+$conn = new mysqli($host, $username, $password, $database);
 
 // Cek koneksi
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-// Simpan data
-$sql = "INSERT INTO contact_form (name, phone, message) VALUES ('$name', '$phone', '$message')";
+// Ambil data dari form
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
+
+// Lindungi dari SQL Injection
+$name = $conn->real_escape_string($name);
+$phone = $conn->real_escape_string($phone);
+$message = $conn->real_escape_string($message);
+
+// Simpan ke database
+$sql = "INSERT INTO contact_messages (name, phone, message) VALUES ('$name', '$phone', '$message')";
+
 if ($conn->query($sql) === TRUE) {
-    echo "Pesan berhasil dikirim!";
+    echo "Pesan Anda berhasil dikirim.";
 } else {
-    echo "Gagal mengirim pesan: " . $conn->error;
+    echo "Terjadi kesalahan: " . $conn->error;
 }
 
 $conn->close();
