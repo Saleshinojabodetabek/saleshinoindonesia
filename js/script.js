@@ -142,11 +142,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Mencegah form melakukan submit ke server
+  e.preventDefault();
 
-  // Notifikasi sederhana
-  alert("Pesan berhasil terkirim!");
+  const form = e.target;
+  const formData = new FormData(form);
 
-  // Opsional: Reset form agar kosong kembali
-  this.reset();
+  fetch("contact.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      // Bisa cek isi respons dari PHP jika mau
+      alert("Pesan berhasil terkirim!");
+      form.reset();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Terjadi kesalahan saat mengirim pesan.");
+    });
 });
