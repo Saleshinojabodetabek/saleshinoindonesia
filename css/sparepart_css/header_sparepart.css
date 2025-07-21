@@ -21,15 +21,17 @@ header {
 
 /* Hero Section */
 .about-hero {
-  background-image: url("/img/spb.jpg"); /* Ganti sesuai nama file gambar Anda */
+  background-image: url("/img/banner-300.jpg"); /* Pastikan path ini sesuai */
   background-size: cover;
-  background-position: center;
-  height: 60vh;
+  background-position: top center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Gunakan 100% tinggi layar */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  overflow: hidden;
 }
 
 .about-hero-overlay {

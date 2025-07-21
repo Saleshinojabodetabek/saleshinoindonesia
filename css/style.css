@@ -50,3 +50,7 @@ img {
     padding: 0 16px; /* Default padding for larger screens */
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -25,7 +25,6 @@
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /* bayangan lebih tebal dan gelap */
   padding: 40px 20px;
   margin: 40px auto;
-  max-width: 1200px;
 }
 
 .product-carousel h2 {
@@ -54,6 +53,7 @@
   -webkit-overflow-scrolling: touch;
   padding-bottom: 10px;
   scroll-behavior: smooth;
+  justify-content: flex-start;
 }
 
 .carousel::-webkit-scrollbar {
@@ -61,6 +61,10 @@
 }
 
 .product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal center */
+  justify-content: center; /* vertical center */
   flex: 0 0 75%;
   scroll-snap-align: center;
   background: #f9f9f9;
@@ -68,6 +72,7 @@
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
+  min-height: 240px; /* beri tinggi minimum jika ingin gambar sejajar rapi */
 }
 
 .product-item img {
@@ -85,34 +90,45 @@
 
 /* ========== CAROUSEL BUTTONS ========== */
 .carousel-btn {
-  display: none; /* default tidak tampil */
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn.left {
+  left: 5px;
+}
+
+.carousel-btn.right {
+  right: 5px;
 }
 
 @media (min-width: 768px) {
   .carousel-btn {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 32px;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    z-index: 2;
+    display: none; /* ❌ Tombol disembunyikan di tampilan desktop */
   }
+  .carousel {
+    justify-content: center;
+  }
+}
 
-  .carousel-btn.left {
-    left: 10px;
-  }
+.carousel-btn.left {
+  left: 10px;
+}
 
-  .carousel-btn.right {
-    right: 10px;
-  }
+.carousel-btn.right {
+  right: 10px;
+}
 
-  .product-item {
-    flex: 0 0 30%;
-  }
+.product-item {
+  flex: 0 0 30%;
 }
 
 /* ========== DESCRIPTION BELOW CAROUSEL ========== */
@@ -132,4 +148,54 @@
   color: #222;
   margin-bottom: 12px;
   line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .product-carousel {
+    padding: 24px 12px;
+    margin: 20px 10px;
+    border-radius: 12px;
+  }
+
+  .product-carousel h2 {
+    font-size: 20px;
+    margin: 12px 0 6px;
+  }
+
+  .product-carousel > p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .carousel {
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+
+  .product-item {
+    flex: 0 0 85%; /* item lebih lebar dari sebelumnya */
+    padding: 8px;
+    border-radius: 6px;
+    min-height: 200px;
+  }
+
+  .product-item img {
+    max-height: 140px;
+  }
+
+  .product-item p {
+    font-size: 13px;
+    margin-top: 6px;
+  }
+
+  .product-description {
+    padding: 16px 12px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .highlight-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 }
