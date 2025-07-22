@@ -5,34 +5,32 @@ $username = "u868657420_root";
 $password = "Natanael110405";
 $database = "u868657420_db_dealer_hino";
 
-// Koneksi ke MySQL
+// Buat koneksi
 $conn = new mysqli($host, $username, $password, $database);
 
 // Cek koneksi
 if ($conn->connect_error) {
-    die("❌ Koneksi gagal: " . $conn->connect_error);
+    die("Koneksi gagal: " . $conn->connect_error);
 }
 
-// Ambil data dari form (dengan validasi sederhana)
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
-$phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
-$message = isset($_POST['message']) ? trim($_POST['message']) : '';
+// Ambil data dari form
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
-// Validasi sederhana
-if (empty($name) || empty($phone) || empty($message)) {
-    die("❌ Semua field harus diisi.");
-}
+// Lindungi dari SQL Injection
+$name = $conn->real_escape_string($name);
+$phone = $conn->real_escape_string($phone);
+$message = $conn->real_escape_string($message);
 
-// Gunakan prepared statement untuk keamanan
-$stmt = $conn->prepare("INSERT INTO contact_messages (name, phone, message) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $name, $phone, $message);
+// Simpan ke database
+$sql = "INSERT INTO contact_messages (name, phone, message) VALUES ('$name', '$phone', '$message')";
 
-if ($stmt->execute()) {
-    echo "✅ Pesan Anda berhasil dikirim.";
+if ($conn->query($sql) === TRUE) {
+    echo "Pesan Anda berhasil dikirim.";
 } else {
-    echo "❌ Terjadi kesalahan: " . $stmt->error;
+    echo "Terjadi kesalahan: " . $conn->error;
 }
 
-$stmt->close();
 $conn->close();
 ?>
