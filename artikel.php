@@ -3,6 +3,8 @@
 $kategoriData = json_decode(file_get_contents("https://saleshinoindonesia.com/admin/api/get_kategori.php"), true);
 $search = $_GET['search'] ?? '';
 $selectedKategori = $_GET['kategori'] ?? '';
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$perPage = 6;
 
 // Bangun URL API dengan filter jika ada
 $apiUrl = "https://saleshinoindonesia.com/admin/api/get_artikel.php";
@@ -17,7 +19,11 @@ if (!empty($params)) {
   $apiUrl .= '?' . implode('&', $params);
 }
 
-$artikel = json_decode(file_get_contents($apiUrl), true);
+$artikelData = json_decode(file_get_contents($apiUrl), true);
+$totalArtikel = is_array($artikelData) ? count($artikelData) : 0;
+$totalPages = ceil($totalArtikel / $perPage);
+$offset = ($page - 1) * $perPage;
+$artikel = array_slice($artikelData, $offset, $perPage);
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -42,6 +48,45 @@ $artikel = json_decode(file_get_contents($apiUrl), true);
     <link rel="stylesheet" href="css/home_css/ourclient.css" />
     <link rel="stylesheet" href="css/blog.css" />
     <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      .blog-filter {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .blog-filter input, .blog-filter select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      .blog-filter button {
+        padding: 10px 20px;
+        background-color: #007e33;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+      }
+      .pagination a {
+        padding: 8px 16px;
+        background: #eee;
+        text-decoration: none;
+        border-radius: 6px;
+        color: #333;
+      }
+      .pagination a.active {
+        background-color: #007e33;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -79,6 +124,8 @@ $artikel = json_decode(file_get_contents($apiUrl), true);
           <button type="submit">Filter</button>
         </form>
 
+        <p>Total artikel: <strong><?= $totalArtikel ?></strong></p>
+
         <div class="blog-grid">
           <?php if (is_array($artikel) && count($artikel) > 0): ?>
             <?php foreach ($artikel as $row): ?>
@@ -93,6 +140,14 @@ $artikel = json_decode(file_get_contents($apiUrl), true);
             <p>Tidak ada artikel yang ditemukan.</p>
           <?php endif; ?>
         </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a class="<?= $i === $page ? 'active' : '' ?>" href="?search=<?= urlencode($search) ?>&kategori=<?= urlencode($selectedKategori) ?>&page=<?= $i ?>"><?= $i ?></a>
+          <?php endfor; ?>
+        </div>
+
       </div>
     </section>
 
