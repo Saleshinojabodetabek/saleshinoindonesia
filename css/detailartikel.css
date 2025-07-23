@@ -11,14 +11,6 @@ header img {
   height: 40px;
 }
 
-header nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #111;
-  font-weight: bold;
-  font-size: 16px;
-}
-
 .content-section {
   max-width: 900px;
   margin: 40px auto;
