@@ -44,7 +44,7 @@ if ($id && is_array($data)) {
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/home_css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="artikel.css">
+    <link rel="stylesheet" href="css/artikel.css">
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
