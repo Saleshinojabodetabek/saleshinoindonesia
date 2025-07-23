@@ -97,7 +97,7 @@ if ($id && is_array($data)) {
   <div class="container">
     <?php if($artikel): ?>
       <h1><?= htmlspecialchars($artikel['judul']) ?></h1>
-      <img src="admin/uploads/<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image">
+      <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image">
       <div class="isi-artikel">
         <?= nl2br($artikel['isi']) ?>
       </div>
