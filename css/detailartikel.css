@@ -1,0 +1,73 @@
+/* Container utama untuk artikel */
+.detail-artikel {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+}
+
+.detail-artikel .container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Judul artikel */
+.detail-artikel h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 24px;
+}
+
+/* Gambar utama artikel */
+.detail-artikel .featured-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Konten isi artikel */
+.detail-artikel .isi-artikel {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+/* Tombol kembali */
+.detail-artikel .btn-kembali {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: #003366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.detail-artikel .btn-kembali:hover {
+  background-color: #00509e;
+}
+
+/* Responsive: mobile */
+@media (max-width: 768px) {
+  .detail-artikel .container {
+    padding: 24px;
+  }
+
+  .detail-artikel h1 {
+    font-size: 26px;
+  }
+
+  .detail-artikel .btn-kembali {
+    padding: 8px 16px;
+  }
+}
