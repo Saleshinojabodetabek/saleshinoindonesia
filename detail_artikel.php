@@ -96,15 +96,22 @@ if ($id && is_array($data)) {
       <aside class="artikel-sidebar" style="flex: 1 1 30%;">
         <div class="sidebar-section">
           <h3>Recent Posts</h3>
-          <ul>
+          <div class="recent-posts-list">
             <?php
             foreach (array_slice($data, 0, 5) as $recent) {
               if ($recent['id'] != $id) {
-                echo '<li><a href="detail_artikel.php?id='.$recent['id'].'">'.htmlspecialchars($recent['judul']).'</a></li>';
+                echo '<div class="recent-post-item" style="display: flex; gap: 10px; margin-bottom: 15px;">';
+                echo '<a href="detail_artikel.php?id=' . $recent['id'] . '" style="flex-shrink: 0;">';
+                echo '<img src="' . htmlspecialchars($recent['gambar']) . '" alt="' . htmlspecialchars($recent['judul']) . '" style="width: 80px; height: 60px; object-fit: cover; border-radius: 5px;">';
+                echo '</a>';
+                echo '<div style="flex-grow:1;">';
+                echo '<a href="detail_artikel.php?id=' . $recent['id'] . '" style="font-weight: bold; text-decoration: none; color: #333;">' . htmlspecialchars($recent['judul']) . '</a>';
+                echo '</div>';
+                echo '</div>';
               }
             }
             ?>
-          </ul>
+          </div>
         </div>
 
         <div class="sidebar-section">
