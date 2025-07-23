@@ -1,4 +1,9 @@
 <?php include "cek_login.php"; ?>
+<?php
+// Ambil daftar kategori dari database
+include "koneksi.php"; // pastikan file ini koneksi ke database
+$kategori = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY nama_kategori ASC");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +25,15 @@
       <div class="mb-3">
         <label>Gambar (jpg/png)</label>
         <input type="file" name="gambar" class="form-control" accept="image/*" required>
+      </div>
+      <div class="mb-3">
+        <label>Kategori</label>
+        <select name="kategori_id" class="form-control" required>
+          <option value="">-- Pilih Kategori --</option>
+          <?php while ($row = mysqli_fetch_assoc($kategori)) { ?>
+            <option value="<?= $row['id'] ?>"><?= htmlspecialchars($row['nama_kategori']) ?></option>
+          <?php } ?>
+        </select>
       </div>
       <button type="submit" class="btn btn-primary">Simpan</button>
       <a href="dashboard.php" class="btn btn-secondary">Kembali</a>
