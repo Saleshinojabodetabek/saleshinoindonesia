@@ -117,14 +117,14 @@ $artikel = array_slice($artikelData, $offset, $perPage);
             <option value="">Semua Kategori</option>
             <?php if (is_array($kategoriData)): ?>
               <?php foreach ($kategoriData as $kat): ?>
-                <option value="<?= htmlspecialchars($kat['nama']) ?>" <?= $selectedKategori === $kat['nama'] ? 'selected' : '' ?>><?= htmlspecialchars($kat['nama']) ?></option>
+                <option value="<?= htmlspecialchars($kat['nama']) ?>" <?= $selectedKategori === $kat['nama'] ? 'selected' : '' ?>>
+                  <?= htmlspecialchars($kat['nama']) ?>
+                </option>
               <?php endforeach; ?>
             <?php endif; ?>
           </select>
           <button type="submit">Filter</button>
         </form>
-
-        <p>Total artikel: <strong><?= $totalArtikel ?></strong></p>
 
         <div class="blog-grid">
           <?php if (is_array($artikel) && count($artikel) > 0): ?>
@@ -144,10 +144,11 @@ $artikel = array_slice($artikelData, $offset, $perPage);
         <!-- Pagination -->
         <div class="pagination">
           <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a class="<?= $i === $page ? 'active' : '' ?>" href="?search=<?= urlencode($search) ?>&kategori=<?= urlencode($selectedKategori) ?>&page=<?= $i ?>"><?= $i ?></a>
+            <a class="<?= $i === $page ? 'active' : '' ?>" href="?search=<?= urlencode($search) ?>&kategori=<?= urlencode($selectedKategori) ?>&page=<?= $i ?>">
+              <?= $i ?>
+            </a>
           <?php endfor; ?>
         </div>
-
       </div>
     </section>
 
