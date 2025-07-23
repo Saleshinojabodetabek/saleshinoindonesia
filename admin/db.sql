@@ -1,10 +1,18 @@
-CREATE TABLE admin (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50), password VARCHAR(255));
-INSERT INTO admin (username, password) VALUES ('admin', '$2y$10$123456789012345678901uFiOQh0qeOVX8Nkjh7IfW1OqBd8e8cW');
+CREATE TABLE admin (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO admin (username, password) VALUES (
+  'admin',
+  '$2y$10$YpBQ7YZM0Oqss9nJX9TwGOkBQ72Z5gC5AVOxt1qZbdZT7nF.D0M3K'
+); -- password: admin123
 
 CREATE TABLE artikel (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  judul VARCHAR(255),
-  isi TEXT,
+  judul VARCHAR(255) NOT NULL,
+  isi TEXT NOT NULL,
   gambar VARCHAR(255),
   tanggal TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
