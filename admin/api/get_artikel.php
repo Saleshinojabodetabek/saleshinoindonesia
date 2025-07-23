@@ -1,14 +1,18 @@
 <?php
-header("Content-Type: application/json");
+
 include "../config.php";
 
-$result = $conn->query("SELECT * FROM artikel ORDER BY id DESC");
-$data = [];
+header('Content-Type: application/json');
+
+$query = "SELECT id, judul, isi, gambar, tanggal FROM artikel ORDER BY id DESC";
+$result = $conn->query($query);
+
+$artikel = [];
 
 while ($row = $result->fetch_assoc()) {
-  $row['gambar'] = "https://saleshinoindonesia.com/admin/uploads/" . $row['gambar']; // sesuaikan domain kamu
-  $data[] = $row;
+  $row['gambar'] = 'https://saleshinoindonesia.com/admin/uploads/' . $row['gambar'];
+  $artikel[] = $row;
 }
 
-echo json_encode($data);
+echo json_encode($artikel);
 ?>
