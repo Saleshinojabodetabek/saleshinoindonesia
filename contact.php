@@ -2,7 +2,7 @@
 // Konfigurasi database
 $host = "localhost";
 $username = "u868657420_root";
-$password = "Natanael110405";
+$password = "Natanael050411";
 $database = "u868657420_db_dealer_hino";
 
 // Buat koneksi
