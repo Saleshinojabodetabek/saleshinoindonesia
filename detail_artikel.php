@@ -38,14 +38,22 @@ if ($id && is_array($data)) {
     <link rel="icon" type="image/png" href="img/logo3.png" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/home_css/header.css" />
+    <link rel="stylesheet" href="css/home_css/product.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/detailartikel.css" />
+    <link rel="stylesheet" href="css/home_css/contactsec.css" />
+    <link rel="stylesheet" href="css/home_css/companyprofilehome.css" />
+    <link rel="stylesheet" href="css/home_css/ourcommitment.css" />
+    <link rel="stylesheet" href="css/home_css/application.css" />
+    <link rel="stylesheet" href="css/home_css/blogcard.css" />
+    <link rel="stylesheet" href="css/home_css/keunggulankami.css" />
+    <link rel="stylesheet" href="css/home_css/contact.css" />
+    <link rel="stylesheet" href="css/home_css/ourclient.css" />
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-
     <!-- Header -->
     <header>
       <div class="container header-content navbar">
