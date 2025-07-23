@@ -1,0 +1,136 @@
+<?php
+// Ambil data dari API
+$artikel = json_decode(file_get_contents("https://saleshinoindonesia.com/admin/api/get_artikel.php"), true);
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dealer Hino Indonesia | Sales Truck Hino Terbaik di Jabodetabek</title>
+    <meta
+      name="description"
+      content="Dealer Resmi Hino Jakarta. Hubungi : 0859 7528 7684 / 0882 1392 5184 Untuk mendapatkan informasi produk Hino. Layanan Terbaik dan Jaminan Mutu."
+    />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/logo3.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/home_css/header.css" />
+    <link rel="stylesheet" href="css/home_css/product.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/home_css/contactsec.css" />
+    <link rel="stylesheet" href="css/home_css/companyprofilehome.css" />
+    <link rel="stylesheet" href="css/home_css/ourcommitment.css" />
+    <link rel="stylesheet" href="css/home_css/application.css" />
+    <link rel="stylesheet" href="css/home_css/blogcard.css" />
+    <link rel="stylesheet" href="css/home_css/keunggulankami.css" />
+    <link rel="stylesheet" href="css/home_css/contact.css" />
+    <link rel="stylesheet" href="css/home_css/ourclient.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-content navbar">
+        <div class="header-title">
+          <img src="img/logo3.png" alt="Logo Hino" style="height: 60px" />
+        </div>
+        <div class="hamburger-menu">&#9776;</div>
+        <nav class="nav links">
+          <a href="index.html">Home</a>
+          <a href="hino300.html">Hino 300 Series</a>
+          <a href="hino500.html">Hino 500 Series</a>
+          <a href="hinobus.html">Hino Bus Series</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="slider">
+        <img src="img/bannerhino2.png" class="slide active" alt="Banner 1" />
+        <img src="img/Euro 4 Hino 300.jpeg" class="slide active" alt="Banner 2" />
+        <img src="img/Euro 4 Hino 500.jpeg" class="slide" alt="Banner 3" />
+        <img src="img/Euro 4 Hino Bus.jpeg" class="slide" alt="Banner 4" />
+      </div>
+      <div class="container">
+        <h2>Sales Hino No.1 Dengan Layanan Profesional & Cepat</h2>
+        <p>
+          Profesional, cepat, dan siap memberikan solusi terbaik untuk kebutuhan
+          truk bisnis Anda. Layanan responsif, proses mudah, dan harga
+          kompetitif!
+        </p>
+        <a
+          href="https://wa.me/+6285975287684?text=Halo%20Saya%20Dapat%20Nomor%20Anda%20Dari%20Google"
+          class="btn btn-contact"
+          >Hubungi Sekarang</a
+        >
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="content-section">
+      <div class="container">
+        <h1>Artikel dan Edukasi</h1>
+        <div class="blog-grid">
+          <?php if (is_array($artikel)): ?>
+            <?php foreach ($artikel as $row): ?>
+              <div class="blog-post">
+                <img src="<?= htmlspecialchars($row['gambar']) ?>" alt="<?= htmlspecialchars($row['judul']) ?>">
+                <h2><?= htmlspecialchars($row['judul']) ?></h2>
+                <p><?= substr(strip_tags($row['isi']), 0, 100) ?>...</p>
+                <a href="detail_artikel.php?id=<?= $row['id'] ?>">Baca Selengkapnya →</a>
+              </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <p>Artikel belum tersedia.</p>
+          <?php endif; ?>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <img src="img/logo3.png" alt="Logo" class="footer-logo" />
+          <p>Nathan, Sales Hino Indonesia yang berpengalaman dan profesional, siap menjadi mitra terbaik Anda dalam memenuhi kebutuhan kendaraan niaga.</p>
+        </div>
+        <div class="footer-section">
+          <h4>HUBUNGI KAMI</h4>
+          <p>📞 0859-7528-7684</p>
+          <p>📧 saleshinojabodetabek@gmail.com</p>
+          <p>📍 Golf Lake Ruko Venice, Jl. Lkr. Luar Barat No.78 Blok B, RT.9/RW.14, Cengkareng Tim., Kecamatan Cengkareng, Jakarta 11730</p>
+          <div class="footer-social" style="margin-top: 20px">
+            <h4>SOSIAL MEDIA</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/saleshinojabodetabek" target="_blank"><i data-feather="instagram"></i></a>
+              <a href="https://wa.me/+6285975287684?text=Halo%20Saya%20Dapat%20Nomor%20Anda%20Dari%20Google" target="_blank"><i data-feather="phone"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61573843992250" target="_blank"><i data-feather="facebook"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-section">
+          <div class="google-map-container" style="margin-top: 20px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.001117199873!2d106.72798237355298!3d-6.130550360104524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f70ab03b3611%3A0x2e6e345ac4d4fd04!2sHINO%20CENGKARENG%20(DGMI)!5e0!3m2!1sid!2sid!4v1752934707067!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sales Hino Indonesia. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

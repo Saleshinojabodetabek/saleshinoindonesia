@@ -1,34 +1,24 @@
 <?php
-include "../config.php";
+header("Content-Type: application/json");
+$host = "localhost";
+$user = "u868657420_root";
+$pass = "Natanael110405";
+$db   = "u868657420_db_dealer_hino";
 
-header('Content-Type: application/json');
-
-$search = isset($_GET['search']) ? '%' . $conn->real_escape_string($_GET['search']) . '%' : null;
-$kategori = isset($_GET['kategori']) ? $conn->real_escape_string($_GET['kategori']) : null;
-
-$query = "SELECT id, judul, isi, gambar, tanggal, kategori FROM artikel";
-$conditions = [];
-
-if ($search) {
-  $conditions[] = "judul LIKE '$search' OR isi LIKE '$search'";
-}
-if ($kategori) {
-  $conditions[] = "kategori = '$kategori'";
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) {
+  die(json_encode(["error" => "Koneksi gagal"]));
 }
 
-if (!empty($conditions)) {
-  $query .= " WHERE " . implode(" AND ", $conditions);
-}
+$sql = "SELECT * FROM artikel ORDER BY tanggal DESC";
+$result = $conn->query($sql);
 
-$query .= " ORDER BY id DESC";
-$result = $conn->query($query);
-
-$artikel = [];
-
+$data = [];
 while ($row = $result->fetch_assoc()) {
-  $row['gambar'] = 'https://saleshinoindonesia.com/admin/uploads/' . $row['gambar'];
-  $artikel[] = $row;
+  $row['gambar'] = 'https://saleshinoindonesia.com/admin/uploads/' . $row['gambar']; // URL gambar
+  $data[] = $row;
 }
 
-echo json_encode($artikel);
+echo json_encode($data);
+$conn->close();
 ?>
