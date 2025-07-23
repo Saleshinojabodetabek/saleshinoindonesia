@@ -36,6 +36,8 @@ if ($id && is_array($data)) {
     />
 
     <link rel="icon" type="image/png" href="img/logo3.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/detailartikel.css" />
 
