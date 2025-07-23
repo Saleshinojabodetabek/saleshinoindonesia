@@ -116,11 +116,17 @@ if ($id && is_array($data)) {
 
         <div class="sidebar-section">
           <h3>Kategori</h3>
-          <ul>
+          <ul style="list-style: none; padding-left: 0;">
             <?php
             $kategori = array_unique(array_column($data, 'kategori'));
             foreach ($kategori as $kat) {
-              echo '<li><a href="artikel.php?kategori=' . urlencode($kat) . '">' . htmlspecialchars($kat) . '</a></li>';
+              if (!empty($kat)) {
+                echo '<li style="margin-bottom: 8px;">';
+                echo '<a href="artikel.php?kategori=' . urlencode($kat) . '" style="text-decoration: none; color: #333; font-weight: 500; display: inline-block;">';
+                echo '• ' . htmlspecialchars($kat);
+                echo '</a>';
+                echo '</li>';
+              }
             }
             ?>
           </ul>
