@@ -1,58 +1,92 @@
+/* Layout utama artikel dan sidebar */
 .artikel-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 40px;
+  margin-top: 40px;
 }
 
 .artikel-main {
-  flex: 1;
-  min-width: 0;
+  flex: 3;
 }
 
 .artikel-sidebar {
-  width: 280px;
-  flex-shrink: 0;
+  flex: 1;
 }
 
-.sidebar-section {
-  background: #f3f3f3;
+.artikel-sidebar .sidebar-section {
+  margin-bottom: 30px;
+  background: #f9f9f9;
   padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.sidebar-section h3 {
-  margin-bottom: 15px;
+.artikel-sidebar h3 {
   font-size: 18px;
-  color: #003366;
+  margin-bottom: 12px;
+  color: #c5b358;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 6px;
 }
 
-.sidebar-section ul {
+.artikel-sidebar ul {
   list-style: none;
   padding-left: 0;
 }
 
-.sidebar-section ul li {
+.artikel-sidebar li {
   margin-bottom: 10px;
 }
 
-.sidebar-section ul li a {
+.artikel-sidebar a {
   color: #333;
+  transition: color 0.3s ease;
+}
+
+.artikel-sidebar a:hover {
+  color: #c5b358;
+}
+
+/* Featured image */
+.featured-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Isi artikel */
+.isi-artikel {
+  margin-bottom: 30px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Tombol kembali */
+.btn-kembali {
+  display: inline-block;
+  background-color: #c5b358;
+  color: #fff;
+  padding: 10px 20px;
   text-decoration: none;
-  transition: color 0.2s ease;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.sidebar-section ul li a:hover {
-  color: #0073e6;
+.btn-kembali:hover {
+  background-color: #b89e35;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive layout */
+@media screen and (max-width: 768px) {
   .artikel-wrapper {
     flex-direction: column;
   }
 
   .artikel-sidebar {
-    width: 100%;
+    margin-top: 30px;
   }
 }

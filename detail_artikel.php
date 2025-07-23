@@ -18,7 +18,11 @@ if ($id && is_array($data)) {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="<?= htmlspecialchars($artikel['judul']) ?>, Hino, Truk, Dealer Hino, Jabodetabek, Hino Indonesia" />
+    <meta property="og:title" content="<?= htmlspecialchars($artikel['judul']) ?>" />
+    <meta property="og:description" content="<?= substr(strip_tags($artikel['isi']), 0, 150) ?>..." />
+    <meta property="og:image" content="<?= htmlspecialchars($artikel['gambar']) ?>" />
+    <meta property="og:url" content="https://saleshinoindonesia.com/detail_artikel.php?id=<?= $artikel['id'] ?>" />
     <title>
       Dealer Hino Indonesia | Sales Truck Hino Terbaik di Jabodetabek
     </title>
