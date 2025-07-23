@@ -46,26 +46,22 @@ if ($id && is_array($data)) {
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <div class="container header-content navbar">
-        <!-- Logo -->
-        <div class="header-title">
-          <img src="img/logo3.png" alt="Logo Hino" style="height: 60px" />
-        </div>
+<header>
+  <div class="container header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0;">
+    <a href="index.html">
+      <img src="img/logo3.png" alt="Logo Hino" style="height: 60px;" />
+    </a>
+    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+    <nav class="nav links">
+      <a href="index.html">Home</a>
+      <a href="hino300.html">Hino 300 Series</a>
+      <a href="hino500.html">Hino 500 Series</a>
+      <a href="hinobus.html">Hino Bus Series</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-        <!-- Hamburger Menu (Mobile Only) -->
-        <div class="hamburger-menu">&#9776;</div>
-
-        <!-- Nav Links -->
-        <nav class="nav links">
-          <a href="index.html">Home</a>
-          <a href="hino300.html">Hino 300 Series</a>
-          <a href="hino500.html">Hino 500 Series</a>
-          <a href="hinobus.html">Hino Bus Series</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
 
 <!-- Konten Artikel -->
 <section class="detail-artikel">
