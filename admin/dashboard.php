@@ -28,7 +28,16 @@ $result = $conn->query("SELECT * FROM artikel ORDER BY id DESC");
           <tr>
             <td><?= htmlspecialchars($row['judul']) ?></td>
             <td><?= $row['tanggal'] ?></td>
-            <td><img src="uploads/<?= $row['gambar'] ?>" width="100"></td>
+            <td>
+              <?php 
+                $gambar_path = "uploads/" . $row['gambar'];
+                if (!empty($row['gambar']) && file_exists($gambar_path)):
+              ?>
+                <img src="<?= $gambar_path ?>" width="100">
+              <?php else: ?>
+                <em>Gambar tidak tersedia</em>
+              <?php endif; ?>
+            </td>
             <td>
               <a href="edit_artikel.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
               <a href="hapus_artikel.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
