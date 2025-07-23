@@ -44,6 +44,7 @@ if ($id && is_array($data)) {
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/home_css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="detailartikel.css">
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -75,22 +76,24 @@ if ($id && is_array($data)) {
 <!-- Konten Artikel -->
 <section class="detail-artikel">
   <div class="container">
-    <div class="artikel-wrapper">
-      <div class="artikel-main">
+    <div class="artikel-wrapper" style="display: flex; flex-wrap: wrap; gap: 30px;">
+      
+      <!-- Artikel Utama -->
+      <div class="artikel-main" style="flex: 1 1 65%;">
         <?php if($artikel): ?>
           <h1><?= htmlspecialchars($artikel['judul']) ?></h1>
-          <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image">
+          <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image" style="width: 100%; height: auto; margin-bottom: 20px;">
           <div class="isi-artikel">
             <?= nl2br($artikel['isi']) ?>
           </div>
-          <a href="artikel.php" class="btn-kembali">← Kembali ke Daftar Artikel</a>
+          <a href="artikel.php" class="btn-kembali" style="display:inline-block; margin-top:20px;">← Kembali ke Daftar Artikel</a>
         <?php else: ?>
           <p>Artikel tidak ditemukan.</p>
         <?php endif; ?>
       </div>
 
-      <!-- Sidebar -->
-      <aside class="artikel-sidebar">
+      <!-- Sidebar Recent Post -->
+      <aside class="artikel-sidebar" style="flex: 1 1 30%;">
         <div class="sidebar-section">
           <h3>Recent Posts</h3>
           <ul>
@@ -117,6 +120,38 @@ if ($id && is_array($data)) {
         </div>
       </aside>
     </div>
+
+    <!-- Related Post -->
+    <?php if ($artikel): ?>
+    <div class="related-posts" style="margin-top: 50px;">
+      <h2>Related Posts</h2>
+      <div class="related-list" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <?php
+        $related_count = 0;
+        foreach ($data as $rel) {
+          if (
+            $rel['id'] != $id &&
+            isset($rel['kategori'], $artikel['kategori']) &&
+            $rel['kategori'] === $artikel['kategori']
+          ) {
+            echo '<div class="related-item" style="flex: 1 1 30%; background:#f2f2f2; padding:15px; border-radius:8px;">';
+            echo '<a href="detail_artikel.php?id=' . $rel['id'] . '">';
+            echo '<img src="' . htmlspecialchars($rel['gambar']) . '" alt="' . htmlspecialchars($rel['judul']) . '" style="width:100%; height:auto; margin-bottom:10px;">';
+            echo '<strong>' . htmlspecialchars($rel['judul']) . '</strong>';
+            echo '</a>';
+            echo '</div>';
+            $related_count++;
+            if ($related_count >= 3) break;
+          }
+        }
+        if ($related_count === 0) {
+          echo "<p>Tidak ada artikel terkait.</p>";
+        }
+        ?>
+      </div>
+    </div>
+    <?php endif; ?>
+
   </div>
 </section>
 

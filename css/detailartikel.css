@@ -1,92 +1,173 @@
-/* Layout utama artikel dan sidebar */
+/* ======== Artikel Container ======== */
+.detail-artikel {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.detail-artikel .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ======== Wrapper ======== */
 .artikel-wrapper {
   display: flex;
-  flex-direction: row;
-  gap: 40px;
-  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
+/* ======== Artikel Utama ======== */
 .artikel-main {
-  flex: 3;
+  flex: 1 1 65%;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.artikel-sidebar {
-  flex: 1;
+.artikel-main h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.artikel-sidebar .sidebar-section {
-  margin-bottom: 30px;
-  background: #f9f9f9;
-  padding: 20px;
+.artikel-main .featured-image {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
 }
 
-.artikel-sidebar h3 {
+.isi-artikel p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+}
+
+.btn-kembali {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  background-color: #007b45;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.btn-kembali:hover {
+  background-color: #005e35;
+}
+
+/* ======== Sidebar ======== */
+.artikel-sidebar {
+  flex: 1 1 30%;
+}
+
+.sidebar-section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-section h3 {
+  margin-bottom: 15px;
   font-size: 18px;
-  margin-bottom: 12px;
-  color: #c5b358;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 6px;
+  color: #007b45;
+  border-bottom: 2px solid #007b45;
+  padding-bottom: 5px;
 }
 
-.artikel-sidebar ul {
+.sidebar-section ul {
   list-style: none;
   padding-left: 0;
 }
 
-.artikel-sidebar li {
+.sidebar-section ul li {
   margin-bottom: 10px;
 }
 
-.artikel-sidebar a {
+.sidebar-section ul li a {
+  text-decoration: none;
   color: #333;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
+}
+.sidebar-section ul li a:hover {
+  color: #007b45;
 }
 
-.artikel-sidebar a:hover {
-  color: #c5b358;
+/* ======== Related Posts ======== */
+.related-posts {
+  margin-top: 60px;
 }
 
-/* Featured image */
-.featured-image {
+.related-posts h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #007b45;
+  border-bottom: 2px solid #007b45;
+  padding-bottom: 6px;
+}
+
+.related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.related-item {
+  flex: 1 1 30%;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+.related-item:hover {
+  transform: translateY(-5px);
+}
+
+.related-item img {
   width: 100%;
   height: auto;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin: 20px 0;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
-/* Isi artikel */
-.isi-artikel {
-  margin-bottom: 30px;
-  line-height: 1.8;
-  color: #444;
-}
-
-/* Tombol kembali */
-.btn-kembali {
-  display: inline-block;
-  background-color: #c5b358;
-  color: #fff;
-  padding: 10px 20px;
+.related-item strong {
+  display: block;
+  font-size: 15px;
+  color: #333;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
-.btn-kembali:hover {
-  background-color: #b89e35;
-}
-
-/* Responsive layout */
-@media screen and (max-width: 768px) {
-  .artikel-wrapper {
-    flex-direction: column;
+/* ======== Responsive ======== */
+@media (max-width: 992px) {
+  .artikel-main,
+  .artikel-sidebar {
+    flex: 1 1 100%;
   }
 
-  .artikel-sidebar {
-    margin-top: 30px;
+  .related-item {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .related-item {
+    flex: 1 1 100%;
+  }
+
+  .artikel-main h1 {
+    font-size: 22px;
+  }
+
+  .btn-kembali {
+    font-size: 13px;
+    padding: 8px 14px;
   }
 }
