@@ -40,6 +40,7 @@ if ($id && is_array($data)) {
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/home_css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/detailartikel.css" />
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -68,21 +69,54 @@ if ($id && is_array($data)) {
       </div>
     </header>
 
-    <!-- Konten Artikel -->
+<!-- Konten Artikel -->
 <section class="detail-artikel">
   <div class="container">
-    <?php if($artikel): ?>
-      <h1><?= htmlspecialchars($artikel['judul']) ?></h1>
-      <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image">
-      <div class="isi-artikel">
-        <?= nl2br($artikel['isi']) ?>
+    <div class="artikel-wrapper">
+      <div class="artikel-main">
+        <?php if($artikel): ?>
+          <h1><?= htmlspecialchars($artikel['judul']) ?></h1>
+          <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image">
+          <div class="isi-artikel">
+            <?= nl2br($artikel['isi']) ?>
+          </div>
+          <a href="artikel.php" class="btn-kembali">← Kembali ke Daftar Artikel</a>
+        <?php else: ?>
+          <p>Artikel tidak ditemukan.</p>
+        <?php endif; ?>
       </div>
-      <a href="artikel.php" class="btn-kembali">← Kembali ke Daftar Artikel</a>
-    <?php else: ?>
-      <p>Artikel tidak ditemukan.</p>
-    <?php endif; ?>
+
+      <!-- Sidebar -->
+      <aside class="artikel-sidebar">
+        <div class="sidebar-section">
+          <h3>Recent Posts</h3>
+          <ul>
+            <?php
+            foreach (array_slice($data, 0, 5) as $recent) {
+              if ($recent['id'] != $id) {
+                echo '<li><a href="detail_artikel.php?id='.$recent['id'].'">'.htmlspecialchars($recent['judul']).'</a></li>';
+              }
+            }
+            ?>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Kategori</h3>
+          <ul>
+            <?php
+            $kategori = array_unique(array_column($data, 'kategori'));
+            foreach ($kategori as $kat) {
+              echo '<li><a href="artikel.php?kategori=' . urlencode($kat) . '">' . htmlspecialchars($kat) . '</a></li>';
+            }
+            ?>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
+
 
     <!-- Footer -->
     <footer class="site-footer">
