@@ -152,7 +152,21 @@ if ($id && is_array($data)) {
           }
         }
         if ($related_count === 0) {
-          echo "<p>Tidak ada artikel terkait.</p>";
+          echo "<p>Tidak ada artikel terkait dengan kategori yang sama.</p>";
+          echo "<h4>Artikel Lainnya:</h4>";
+          $count_random = 0;
+          foreach ($data as $random) {
+            if ($random['id'] != $id) {
+              echo '<div class="related-item" style="flex: 1 1 30%; background:#f9f9f9; padding:15px; border-radius:8px;">';
+              echo '<a href="detail_artikel.php?id=' . $random['id'] . '">';
+              echo '<img src="' . htmlspecialchars($random['gambar']) . '" alt="' . htmlspecialchars($random['judul']) . '" style="width:100%; height:auto; margin-bottom:10px;">';
+              echo '<strong>' . htmlspecialchars($random['judul']) . '</strong>';
+              echo '</a>';
+              echo '</div>';
+              $count_random++;
+              if ($count_random >= 3) break;
+            }
+          }
         }
         ?>
       </div>
