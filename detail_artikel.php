@@ -100,12 +100,12 @@ if ($id && is_array($data)) {
             <?php
             foreach (array_slice($data, 0, 5) as $recent) {
               if ($recent['id'] != $id) {
-                echo '<div class="recent-post-item" style="display: flex; gap: 10px; margin-bottom: 15px;">';
+                echo '<div class="recent-post-item" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">';
                 echo '<a href="detail_artikel.php?id=' . $recent['id'] . '" style="flex-shrink: 0;">';
-                echo '<img src="' . htmlspecialchars($recent['gambar']) . '" alt="' . htmlspecialchars($recent['judul']) . '" style="width: 80px; height: 60px; object-fit: cover; border-radius: 5px;">';
+                echo '<img src="' . htmlspecialchars($recent['gambar']) . '" alt="' . htmlspecialchars($recent['judul']) . '" style="width: 80px; height: 60px; object-fit: cover; border-radius: 6px;">';
                 echo '</a>';
-                echo '<div style="flex-grow:1;">';
-                echo '<a href="detail_artikel.php?id=' . $recent['id'] . '" style="font-weight: bold; text-decoration: none; color: #333;">' . htmlspecialchars($recent['judul']) . '</a>';
+                echo '<div style="flex: 1;">';
+                echo '<a href="detail_artikel.php?id=' . $recent['id'] . '" style="font-weight: 600; text-decoration: none; color: #333; line-height: 1.3; display: block;">' . htmlspecialchars($recent['judul']) . '</a>';
                 echo '</div>';
                 echo '</div>';
               }
