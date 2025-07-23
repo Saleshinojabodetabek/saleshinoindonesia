@@ -45,7 +45,7 @@ if ($id && is_array($data)) {
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    
+
     <!-- Header -->
     <header>
       <div class="container header-content navbar">
@@ -67,23 +67,6 @@ if ($id && is_array($data)) {
         </nav>
       </div>
     </header>
-
-
-<!-- Konten Artikel -->
-<section class="detail-artikel">
-  <div class="container">
-    <?php if($artikel): ?>
-      <h1><?= htmlspecialchars($artikel['judul']) ?></h1>
-      <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image">
-      <div class="isi-artikel">
-        <?= nl2br($artikel['isi']) ?>
-      </div>
-      <a href="artikel.php" class="btn-kembali">← Kembali ke Daftar Artikel</a>
-    <?php else: ?>
-      <p>Artikel tidak ditemukan.</p>
-    <?php endif; ?>
-  </div>
-</section>
 
     <!-- Footer -->
     <footer class="site-footer">
