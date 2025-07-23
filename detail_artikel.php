@@ -20,63 +20,7 @@ if ($id && is_array($data)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $artikel ? htmlspecialchars($artikel['judul']) : 'Artikel Tidak Ditemukan' ?> | Sales Hino Indonesia</title>
-  <link rel="stylesheet" href="css/blog.css">
-  <style>
-    .navbar {
-      background-color: #ffffff;
-      padding: 15px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar a {
-      color: #333;
-      margin-right: 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .detail-artikel {
-      padding: 40px 20px;
-      background-color: #f9f9f9;
-    }
-    .detail-artikel .container {
-      max-width: 800px;
-      margin: auto;
-    }
-    .detail-artikel h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      text-align: center;
-    }
-    .featured-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-    .isi-artikel {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #333;
-      margin-bottom: 40px;
-    }
-    .btn-kembali {
-      display: inline-block;
-      background-color: #007b2e;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .btn-kembali:hover {
-      background-color: #005d23;
-    }
-  </style>
+  <link rel="stylesheet" href="css/detailartikel.css">
 </head>
 <body>
 
