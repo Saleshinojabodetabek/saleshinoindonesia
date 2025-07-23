@@ -5,7 +5,8 @@ include "config.php";
 $judul = $_POST['judul'];
 $isi = $_POST['isi'];
 
-$nama_file = $_FILES['gambar']['name'];
+$ext = pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
+$nama_file = time() . "_" . preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($_FILES['gambar']['name'], PATHINFO_FILENAME)) . "." . $ext;
 $tmp_file = $_FILES['gambar']['tmp_name'];
 $upload_error = $_FILES['gambar']['error'];
 
