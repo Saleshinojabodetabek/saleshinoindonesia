@@ -31,22 +31,10 @@ $artikel = array_slice($artikelData, $offset, $perPage);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dealer Hino Indonesia | Sales Truck Hino Terbaik di Jabodetabek</title>
-  <meta name="description" content="Dealer Resmi Hino Jakarta. Hubungi : 0859 7528 7684 / 0882 1392 5184 Untuk mendapatkan informasi produk Hino. Layanan Terbaik dan Jaminan Mutu." />
-  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <title>Artikel & Berita | Dealer Hino Indonesia</title>
+  <meta name="description" content="Temukan artikel dan edukasi terbaru seputar Hino Indonesia. Informasi produk, layanan, dan tips bermanfaat dari Dealer Resmi Hino Jabodetabek." />
+  <link rel="icon" href="/img/favicon.png" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/home_css/header.css" />
-  <link rel="stylesheet" href="css/home_css/product.css" />
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/home_css/contactsec.css" />
-  <link rel="stylesheet" href="css/home_css/companyprofilehome.css" />
-  <link rel="stylesheet" href="css/home_css/ourcommitment.css" />
-  <link rel="stylesheet" href="css/home_css/application.css" />
-  <link rel="stylesheet" href="css/home_css/blogcard.css" />
-  <link rel="stylesheet" href="css/home_css/keunggulankami.css" />
-  <link rel="stylesheet" href="css/home_css/contact.css" />
-  <link rel="stylesheet" href="css/home_css/ourclient.css" />
   <link rel="stylesheet" href="css/blog.css" />
   <script src="https://unpkg.com/feather-icons"></script>
   <style>
@@ -55,6 +43,7 @@ $artikel = array_slice($artikelData, $offset, $perPage);
       gap: 10px;
       flex-wrap: wrap;
       align-items: center;
+      margin-bottom: 20px;
     }
     .blog-filter input, .blog-filter select {
       padding: 10px;
@@ -69,6 +58,45 @@ $artikel = array_slice($artikelData, $offset, $perPage);
       border: none;
       border-radius: 8px;
       cursor: pointer;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .blog-post {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .blog-post:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .blog-post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .blog-post h2 {
+      font-size: 20px;
+      padding: 10px 15px 0;
+    }
+    .blog-post p {
+      padding: 0 15px 10px;
+      font-size: 14px;
+      color: #555;
+    }
+    .blog-post a {
+      display: block;
+      padding: 10px 15px;
+      background-color: #f0f0f0;
+      color: #007e33;
+      text-decoration: none;
+      font-weight: bold;
+      border-top: 1px solid #ddd;
     }
     .pagination {
       display: flex;
@@ -110,7 +138,7 @@ $artikel = array_slice($artikelData, $offset, $perPage);
     <div class="container">
       <h1>Artikel dan Edukasi</h1>
 
-      <form method="get" class="blog-filter" style="margin-bottom: 20px;">
+      <form method="get" class="blog-filter">
         <input type="text" name="search" placeholder="Cari artikel..." value="<?= htmlspecialchars($search) ?>" />
         <select name="kategori">
           <option value="">Semua Kategori</option>
