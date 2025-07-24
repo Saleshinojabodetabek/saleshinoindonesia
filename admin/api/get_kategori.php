@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 }
 
 // Ambil data kategori
-$sql = "SELECT id, nama FROM kategori ORDER BY nama ASC";
+$sql = "SELECT id, nama_kategori FROM kategori ORDER BY nama_kategori ASC";
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -33,7 +33,11 @@ if (!$result) {
 $kategori = [];
 
 while ($row = $result->fetch_assoc()) {
-    $kategori[] = $row;
+    // Buat format output: id dan nama (pakai alias agar frontend tetap bisa akses 'nama')
+    $kategori[] = [
+        "id" => $row["id"],
+        "nama" => $row["nama_kategori"]
+    ];
 }
 
 // Output dalam format JSON
