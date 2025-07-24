@@ -92,9 +92,13 @@ $artikel = array_slice($artikelData, $offset, $perPage);
     <!-- Header -->
     <header>
       <div class="container header-content navbar">
-        <div class="header-title">
-          <img src="img/logo3.png" alt="Logo Hino" style="height: 60px" />
-        </div>
+    <!-- Logo -->
+    <div class="header-title">
+      <a href="https://saleshinoindonesia.com">
+        <img src="img/logo3.png" alt="Logo Hino" style="height: 60px" />
+      </a>
+    </div>
+
         <div class="hamburger-menu">&#9776;</div>
         <nav class="nav links">
           <a href="index.php">Home</a>
