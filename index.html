@@ -55,6 +55,7 @@
           <a href="hino300.html">Hino 300 Series</a>
           <a href="hino500.html">Hino 500 Series</a>
           <a href="hinobus.html">Hino Bus Series</a>
+          <a href="artikel.php">Blog & Artikel</a>
           <a href="contact.html">Contact</a>
         </nav>
       </div>
@@ -318,43 +319,30 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
       <div class="container">
         <h2>Blog & Artikel</h2>
         <p>
-          Dapatkan informasi terbaru seputar alat berat, perawatan, dan tips
-          terbaik.
+          Dapatkan informasi terbaru seputar alat berat, perawatan, dan tips terbaik.
         </p>
 
         <div class="blog-grid">
-          <!-- Artikel 1 -->
-          <div class="blog-card">
-            <img src="img/promohino1.jpg" alt="Tips Merawat Excavator" />
-            <h3>Tips Merawat Excavator Agar Tetap Prima</h3>
-            <p>
-              Excavator yang dirawat dengan baik akan lebih awet dan efisien.
-              Berikut adalah 7 tips perawatan yang wajib dilakukan.
-            </p>
-            <a href="#">Read More</a>
-          </div>
+          <?php
+          // Ambil data artikel terbaru dari API
+          $artikelData = json_decode(file_get_contents("https://saleshinoindonesia.com/admin/api/get_artikel.php"), true);
 
-          <!-- Artikel 2 -->
-          <div class="blog-card">
-            <img src="img/promohino1.jpg" alt="Memilih Sparepart" />
-            <h3>Cara Memilih Spare Part Berkualitas untuk Alat Berat</h3>
-            <p>
-              Memilih suku cadang yang tepat sangat penting untuk menjaga
-              performa alat berat Anda.
-            </p>
-            <a href="#">Read More</a>
-          </div>
-
-          <!-- Artikel 3 -->
-          <div class="blog-card">
-            <img src="img/promohino1.jpg" alt="Perawatan Berkala" />
-            <h3>Pentingnya Perawatan Berkala pada Alat Berat</h3>
-            <p>
-              Servis rutin dapat mencegah kerusakan besar dan menghemat biaya
-              operasional jangka panjang.
-            </p>
-            <a href="#">Read More</a>
-          </div>
+          if (is_array($artikelData)) {
+            $terbaru = array_slice($artikelData, 0, 3); // Ambil 3 artikel terbaru
+            foreach ($terbaru as $artikel):
+          ?>
+            <div class="blog-card">
+              <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" />
+              <h3><?= htmlspecialchars($artikel['judul']) ?></h3>
+              <p><?= substr(strip_tags($artikel['isi']), 0, 100) ?>...</p>
+              <a href="detail_artikel.php?id=<?= $artikel['id'] ?>">Read More</a>
+            </div>
+          <?php
+            endforeach;
+          } else {
+            echo "<p>Tidak ada artikel ditemukan.</p>";
+          }
+          ?>
         </div>
       </div>
     </section>
