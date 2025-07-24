@@ -355,7 +355,10 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
         </div>
       </div>
     </section>
-
+    
+    <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-1c150e27-6597-4113-becd-79df393b9756" data-elfsight-app-lazy></div>
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -415,9 +418,6 @@ Nathan, Sales Hino Indonesia yang berpengalaman dan profesional, siap menjadi mi
       </div>
     </footer>
 
-    <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-    <script src="https://static.elfsight.com/platform/platform.js" async></script>
-    <div class="elfsight-app-1c150e27-6597-4113-becd-79df393b9756" data-elfsight-app-lazy></div>
 
     <script>
       feather.replace(); // Inisialisasi feather icon
