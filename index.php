@@ -339,10 +339,11 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
               display: flex; 
               flex-direction: column; 
               background: #fff;
+              min-height: 500px;
             ">
               <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" style="width: 100%; height: 200px; object-fit: cover;" />
-              <div style="padding: 15px; flex-grow: 1; display: flex; flex-direction: column;">
-                <h3 style="font-size: 18px; margin: 0 0 10px 0;">
+              <div style="padding: 15px; display: flex; flex-direction: column; flex-grow: 1;">
+                <h3 style="font-size: 18px; margin: 0 0 10px 0; min-height: 72px;">
                   <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" style="color: #333; text-decoration: none;">
                     <?= htmlspecialchars($artikel['judul']) ?>
                   </a>
@@ -350,7 +351,7 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
                 <p style="font-size: 14px; color: #666; flex-grow: 1;">
                   <?= substr(strip_tags($artikel['isi']), 0, 100) ?>...
                 </p>
-                <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" style="margin-top: 15px; color: #007bff; text-decoration: none; font-weight: 500;">Read More</a>
+                <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" style="margin-top: auto; color: #007bff; text-decoration: none; font-weight: 500;">Read More</a>
               </div>
             </div>
           <?php
