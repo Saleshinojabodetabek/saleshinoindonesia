@@ -46,6 +46,7 @@
   line-height: 1.8;
 }
 
+/* ======== Tombol Kembali ======== */
 .btn-kembali {
   display: inline-block;
   margin-top: 20px;
@@ -57,6 +58,7 @@
   font-size: 14px;
   transition: background 0.3s;
 }
+
 .btn-kembali:hover {
   background-color: #005e35;
 }
@@ -96,6 +98,7 @@
   color: #333;
   transition: color 0.3s;
 }
+
 .sidebar-section ul li a:hover {
   color: #007b45;
 }
@@ -120,13 +123,14 @@
 }
 
 .related-item {
-  flex: 1 1 30%;
+  flex: 1 1 calc(33.333% - 20px);
   background-color: #fff;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
 }
+
 .related-item:hover {
   transform: translateY(-5px);
 }
@@ -155,19 +159,45 @@
   .related-item {
     flex: 1 1 45%;
   }
+
+  .artikel-main h1 {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 600px) {
-  .related-item {
-    flex: 1 1 100%;
+  .detail-artikel {
+    padding: 30px 15px;
+  }
+
+  .artikel-main {
+    padding: 20px;
   }
 
   .artikel-main h1 {
-    font-size: 22px;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .isi-artikel p {
+    font-size: 15px;
   }
 
   .btn-kembali {
     font-size: 13px;
     padding: 8px 14px;
+  }
+
+  .sidebar-section h3 {
+    font-size: 16px;
+  }
+
+  .related-item {
+    flex: 1 1 100%;
+    padding: 12px;
+  }
+
+  .related-posts h2 {
+    font-size: 20px;
   }
 }

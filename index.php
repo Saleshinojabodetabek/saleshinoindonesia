@@ -319,7 +319,7 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
       <div class="container">
         <h2>Blog & Artikel</h2>
         <p>
-          Dapatkan informasi terbaru seputar alat berat, perawatan, dan tips terbaik.
+          Dapatkan informasi terbaru seputar Truk Hino, perawatan, dan promo terbaik.
         </p>
 
         <div class="blog-grid">
