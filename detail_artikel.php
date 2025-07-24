@@ -43,64 +43,6 @@ if ($id && is_array($data)) {
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- Tambahan Perbaikan Ukuran Navbar & Footer -->
-    <style>
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .navbar {
-        font-size: 16px;
-        padding: 15px 30px;
-      }
-
-      .navbar .links a {
-        font-size: 16px;
-        margin-right: 15px;
-      }
-
-      .site-footer {
-        font-size: 16px;
-        padding: 40px 30px;
-      }
-
-      .site-footer .footer-section h4 {
-        font-size: 18px;
-      }
-
-      .site-footer p,
-      .site-footer a {
-        font-size: 15px;
-      }
-
-      @media (max-width: 600px) {
-        .navbar {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 15px;
-        }
-
-        .navbar .links a {
-          display: block;
-          margin: 10px 0;
-          font-size: 16px;
-        }
-
-        .site-footer {
-          text-align: center;
-          padding: 30px 15px;
-        }
-
-        .site-footer .footer-section {
-          margin-bottom: 30px;
-        }
-
-        .site-footer .footer-section h4 {
-          font-size: 16px;
-        }
-      }
-    </style>
   </head>
   <body>
 
