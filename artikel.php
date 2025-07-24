@@ -112,8 +112,13 @@ $artikel = array_slice($artikelData, $offset, $perPage);
         <h1>Artikel dan Edukasi</h1>
 
         <form method="get" class="blog-filter" style="margin-bottom: 20px;">
-          <input type="text" name="search" placeholder="Cari artikel..." value="<?= htmlspecialchars($search) ?>" />
-          <select name="kategori">
+          <input 
+            type="text" 
+            name="search" 
+            placeholder="Cari artikel..." 
+            value="<?= htmlspecialchars($search) ?>" 
+          />
+          <select name="kategori" onchange="this.form.submit()">
             <option value="">Semua Kategori</option>
             <?php if (is_array($kategoriData)): ?>
               <?php foreach ($kategoriData as $kat): ?>
@@ -125,6 +130,7 @@ $artikel = array_slice($artikelData, $offset, $perPage);
           </select>
           <button type="submit">Filter</button>
         </form>
+
 
         <div class="blog-grid">
           <?php if (is_array($artikel) && count($artikel) > 0): ?>
