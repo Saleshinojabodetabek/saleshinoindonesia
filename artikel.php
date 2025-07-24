@@ -106,6 +106,25 @@ $artikel = array_slice($artikelData, $offset, $perPage);
       </div>
     </header>
 
+    <!-- Hero Banner -->
+    <section class="hero-banner" style="position: relative; overflow: hidden;">
+      <img src="img/Euro 4 Hino 300.jpeg" alt="Banner Artikel Hino" style="width: 100%; height: auto; max-height: 400px; object-fit: cover;">
+      <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      ">
+        <h1 style="color: white; font-size: 36px; font-weight: bold;">Blog & Artikel Hino Indonesia</h1>
+      </div>
+    </section>
+
+
     <!-- Blog Filter -->
     <section class="content-section">
       <div class="container">
