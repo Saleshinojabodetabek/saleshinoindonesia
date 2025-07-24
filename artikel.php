@@ -128,7 +128,6 @@ $artikel = array_slice($artikelData, $offset, $perPage);
     <!-- Blog Filter -->
     <section class="content-section">
       <div class="container">
-        <h1>Blog & Artikel Hino Indonesia</h1>
 
         <form method="get" class="blog-filter" style="margin-bottom: 20px;">
           <input 
