@@ -322,7 +322,7 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
           Dapatkan informasi terbaru seputar alat berat, perawatan, dan tips terbaik.
         </p>
 
-        <div class="blog-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div class="blog-grid">
           <?php
           // Ambil data artikel terbaru dari API
           $artikelData = json_decode(file_get_contents("https://saleshinoindonesia.com/admin/api/get_artikel.php"), true);
@@ -331,27 +331,16 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
             $terbaru = array_slice($artikelData, 0, 3); // Ambil 3 artikel terbaru
             foreach ($terbaru as $artikel):
           ?>
-            <div class="blog-card" style="
-              flex: 1 1 calc(33.333% - 20px); 
-              box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-              border-radius: 8px; 
-              overflow: hidden; 
-              display: flex; 
-              flex-direction: column; 
-              background: #fff;
-              min-height: 500px;
-            ">
-              <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" style="width: 100%; height: 200px; object-fit: cover;" />
-              <div style="padding: 15px; display: flex; flex-direction: column; flex-grow: 1;">
-                <h3 style="font-size: 18px; margin: 0 0 10px 0; min-height: 72px;">
-                  <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" style="color: #333; text-decoration: none;">
+            <div class="blog-card">
+              <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" />
+              <div class="blog-card-content">
+                <h3>
+                  <a href="detail_artikel.php?id=<?= $artikel['id'] ?>">
                     <?= htmlspecialchars($artikel['judul']) ?>
                   </a>
                 </h3>
-                <p style="font-size: 14px; color: #666; flex-grow: 1;">
-                  <?= substr(strip_tags($artikel['isi']), 0, 100) ?>...
-                </p>
-                <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" style="margin-top: auto; color: #007bff; text-decoration: none; font-weight: 500;">Read More</a>
+                <p><?= substr(strip_tags($artikel['isi']), 0, 100) ?>...</p>
+                <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" class="read-more">Read More</a>
               </div>
             </div>
           <?php
@@ -363,6 +352,7 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
         </div>
       </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="site-footer">
