@@ -136,9 +136,9 @@ if ($id && is_array($data)) {
 
     <!-- Related Post -->
     <?php if ($artikel): ?>
-    <div class="related-posts" style="margin-top: 50px;">
-      <h2>Related Posts</h2>
-      <div class="related-list" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div class="related-posts" style="margin-top: 60px;">
+      <h2 style="margin-bottom: 25px; font-size: 26px; font-weight: 700;">Related Posts</h2>
+      <div class="related-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
         <?php
         $related_count = 0;
         foreach ($data as $rel) {
@@ -147,10 +147,13 @@ if ($id && is_array($data)) {
             isset($rel['kategori'], $artikel['kategori']) &&
             $rel['kategori'] === $artikel['kategori']
           ) {
-            echo '<div class="related-item" style="flex: 1 1 30%; background:#f2f2f2; padding:15px; border-radius:8px;">';
-            echo '<a href="detail_artikel.php?id=' . $rel['id'] . '">';
-            echo '<img src="' . htmlspecialchars($rel['gambar']) . '" alt="' . htmlspecialchars($rel['judul']) . '" style="width:100%; height:auto; margin-bottom:10px;">';
-            echo '<strong>' . htmlspecialchars($rel['judul']) . '</strong>';
+            echo '<div class="related-item" style="background: #ffffff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.3s ease;">';
+            echo '<a href="detail_artikel.php?id=' . $rel['id'] . '" style="text-decoration: none; color: #333;">';
+            echo '<img src="' . htmlspecialchars($rel['gambar']) . '" alt="' . htmlspecialchars($rel['judul']) . '" style="width: 100%; height: 160px; object-fit: cover;">';
+            echo '<div style="padding: 15px;">';
+            echo '<h4 style="font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">' . htmlspecialchars($rel['judul']) . '</h4>';
+            echo '<p style="font-size: 14px; color: #666; line-height: 1.5;">' . substr(strip_tags($rel['isi']), 0, 100) . '...</p>';
+            echo '</div>';
             echo '</a>';
             echo '</div>';
             $related_count++;
