@@ -219,9 +219,9 @@ $artikel = array_slice($artikelData, $offset, $perPage);
       </div>
     </footer>
 
-        <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-        <div class="elfsight-app-1c150e27-6597-4113-becd-79df393b9756" data-elfsight-app-lazy></div>
+<!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-1c150e27-6597-4113-becd-79df393b9756" data-elfsight-app-lazy></div>
 
     <script>feather.replace();</script>
   </body>
