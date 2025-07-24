@@ -83,7 +83,7 @@ if ($id && is_array($data)) {
         <?php if($artikel): ?>
           <h1><?= htmlspecialchars($artikel['judul']) ?></h1>
           <p style="color: #888; font-size: 14px; margin-bottom: 15px;">
-            Diposting oleh <strong><?= htmlspecialchars($artikel['author'] ?? 'Admin') ?></strong>
+            Diposting oleh <strong><?= htmlspecialchars($artikel['author'] ?? 'Nathan Hino') ?></strong>
             pada <?= date('d M Y', strtotime($artikel['created_at'] ?? 'now')) ?>
           </p>
           <img src="<?= htmlspecialchars($artikel['gambar']) ?>" alt="<?= htmlspecialchars($artikel['judul']) ?>" class="featured-image" style="width: 100%; height: auto; margin-bottom: 20px;">
