@@ -1,7 +1,15 @@
 <?php
 include "cek_login.php";
 include "config.php";
-$result = $conn->query("SELECT * FROM artikel ORDER BY id DESC");
+
+// Ambil data artikel beserta nama kategori-nya
+$query = "
+  SELECT a.*, k.nama_kategori 
+  FROM artikel a
+  LEFT JOIN kategori k ON a.kategori_id = k.id
+  ORDER BY a.id DESC
+";
+$result = $conn->query($query);
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,10 +22,12 @@ $result = $conn->query("SELECT * FROM artikel ORDER BY id DESC");
     <h2>Daftar Artikel</h2>
     <a href="tambah_artikel.php" class="btn btn-success mb-3">+ Tambah Artikel</a>
     <a href="logout.php" class="btn btn-danger mb-3 float-end">Logout</a>
-    <table class="table table-bordered">
-      <thead>
+
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
         <tr>
           <th>Judul</th>
+          <th>Kategori</th>
           <th>Tanggal</th>
           <th>Gambar</th>
           <th>Aksi</th>
@@ -27,6 +37,7 @@ $result = $conn->query("SELECT * FROM artikel ORDER BY id DESC");
         <?php while ($row = $result->fetch_assoc()): ?>
           <tr>
             <td><?= htmlspecialchars($row['judul']) ?></td>
+            <td><?= htmlspecialchars($row['nama_kategori'] ?? 'Tidak ada') ?></td>
             <td><?= $row['tanggal'] ?></td>
             <td>
               <?php 
