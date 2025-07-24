@@ -1,4 +1,7 @@
 <?php
+// Set response JSON
+header('Content-Type: application/json');
+
 // Koneksi ke database
 $host = "localhost";
 $user = "u868657420_root";
@@ -10,7 +13,7 @@ $conn = new mysqli($host, $user, $pass, $db);
 // Cek koneksi
 if ($conn->connect_error) {
     http_response_code(500);
-    echo json_encode(["error" => "Koneksi gagal"]);
+    echo json_encode(["error" => "Koneksi gagal: " . $conn->connect_error]);
     exit;
 }
 
@@ -18,13 +21,18 @@ if ($conn->connect_error) {
 $sql = "SELECT id, nama FROM kategori ORDER BY nama ASC";
 $result = $conn->query($sql);
 
-$kategori = [];
-
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $kategori[] = $row;
-    }
+if (!$result) {
+    http_response_code(500);
+    echo json_encode(["error" => "Query gagal: " . $conn->error]);
+    exit;
 }
 
-header('Content-Type: application/json');
+$kategori = [];
+
+while ($row = $result->fetch_assoc()) {
+    $kategori[] = $row;
+}
+
+// Output dalam format JSON
 echo json_encode($kategori);
+?>
