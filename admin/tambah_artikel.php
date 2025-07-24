@@ -1,43 +1,50 @@
-<?php include "cek_login.php"; ?>
 <?php
-// Ambil daftar kategori dari database
-include "koneksi.php"; // pastikan file ini koneksi ke database
-$kategori = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY nama_kategori ASC");
+// Aktifkan error reporting untuk debugging (hapus saat sudah live)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include "cek_login.php";
+include "koneksi.php"; // Pastikan ini file koneksi dengan variabel $koneksi
+
+// Ambil data dari form
+$judul = $_POST['judul'];
+$isi = $_POST['isi'];
+$kategori_id = $_POST['kategori_id'];
+
+// Validasi input (opsional tambahan)
+if (empty($judul) || empty($isi) || empty($kategori_id)) {
+  die("Semua field wajib diisi.");
+}
+
+// Proses upload gambar
+if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0) {
+  $ext = pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
+  $nama_file_bersih = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($_FILES['gambar']['name'], PATHINFO_FILENAME));
+  $nama_file = time() . "_" . $nama_file_bersih . "." . $ext;
+
+  $target_dir = "uploads/";
+  $target_file = $target_dir . $nama_file;
+
+  // Pastikan folder uploads ada
+  if (!is_dir($target_dir)) {
+    mkdir($target_dir, 0755, true);
+  }
+
+  // Simpan file gambar ke folder
+  if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_file)) {
+    // Simpan ke database
+    $stmt = mysqli_prepare($koneksi, "INSERT INTO artikel (judul, isi, gambar, kategori_id) VALUES (?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt, "sssi", $judul, $isi, $nama_file, $kategori_id);
+    mysqli_stmt_execute($stmt);
+
+    // Redirect ke dashboard
+    header("Location: dashboard.php");
+    exit;
+  } else {
+    die("Gagal upload gambar. Pastikan folder 'uploads/' memiliki permission yang benar.");
+  }
+} else {
+  die("Gambar wajib diupload.");
+}
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Tambah Artikel</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-  <div class="container mt-4">
-    <h2>Tambah Artikel Baru</h2>
-    <form action="proses_tambah.php" method="post" enctype="multipart/form-data">
-      <div class="mb-3">
-        <label>Judul</label>
-        <input type="text" name="judul" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label>Isi Artikel</label>
-        <textarea name="isi" class="form-control" rows="6" required></textarea>
-      </div>
-      <div class="mb-3">
-        <label>Gambar (jpg/png)</label>
-        <input type="file" name="gambar" class="form-control" accept="image/*" required>
-      </div>
-      <div class="mb-3">
-        <label>Kategori</label>
-        <select name="kategori_id" class="form-control" required>
-          <option value="">-- Pilih Kategori --</option>
-          <?php while ($row = mysqli_fetch_assoc($kategori)) { ?>
-            <option value="<?= $row['id'] ?>"><?= htmlspecialchars($row['nama_kategori']) ?></option>
-          <?php } ?>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Simpan</button>
-      <a href="dashboard.php" class="btn btn-secondary">Kembali</a>
-    </form>
-  </div>
-</body>
-</html>
