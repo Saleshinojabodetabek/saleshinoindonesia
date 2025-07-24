@@ -219,6 +219,29 @@ $artikel = array_slice($artikelData, $offset, $perPage);
       </div>
     </footer>
 
+        <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-1c150e27-6597-4113-becd-79df393b9756" data-elfsight-app-lazy></div>
+
+            <footer>
+            <div class="socials">
+              <a href="https://www.instagram.com/karoseriamn/"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://wa.me/+6285975287684?text=Halo%20Saya%20Dapat%20Nomor%20Anda%20Dari%20Google"
+                ><i data-feather="phone"></i
+              ></a>
+              <a href="https://x.com/Amnkaroseri123"
+                ><i data-feather="twitter"></i
+              ></a>
+            </div>
+            <div>
+              <p class="slogan">Hino Rajanya Truck dan Bus Terbaik di Indonesia</p>
+              <p class="credit">Nacha Natanael | &copy;2020</p>
+            </div>
+          </footer>
+
     <script>feather.replace();</script>
   </body>
 </html>
