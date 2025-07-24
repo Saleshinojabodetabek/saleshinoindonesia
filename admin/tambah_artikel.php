@@ -90,9 +90,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <select name="kategori_id" id="kategori_id" required>
       <option value="">-- Pilih Kategori --</option>
       <?php
-        $kategori = mysqli_query($koneksi, "SELECT id, nama FROM kategori ORDER BY nama ASC");
+        $kategori = mysqli_query($koneksi, "SELECT id, nama_kategori FROM kategori ORDER BY nama_kategori ASC");
         while ($row = mysqli_fetch_assoc($kategori)) {
-          echo "<option value='{$row['id']}'>{$row['nama']}</option>";
+          echo "<option value='{$row['id']}'>{$row['nama_kategori']}</option>";
         }
       ?>
     </select>
