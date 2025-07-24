@@ -13,6 +13,11 @@ if ($id && is_array($data)) {
     }
   }
 }
+// Handle tanggal jika tersedia, fallback ke "now"
+$tanggal = isset($artikel['tanggal']) ? date('d M Y', strtotime($artikel['tanggal'])) : date('d M Y');
+
+// Handle author jika belum ada
+$author = $artikel['author'] ?? 'Admin';
 ?>
 <!DOCTYPE html>
 <html lang="en">
