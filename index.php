@@ -74,8 +74,12 @@
           <div class="text">
             <h2>Sales Hino Indonesia</h2>
             <div class="divider"></div>
-            <p>Nathan, Sales Hino Indonesia yang berpengalaman dan profesional, siap menjadi mitra terbaik Anda dalam memenuhi kebutuhan kendaraan niaga...</p>
-            <p>Komitmen Nathan adalah memberikan lebih dari sekadar penjualan...</p>
+        <p>
+          Nathan, Sales Hino Indonesia yang berpengalaman dan profesional, siap menjadi mitra terbaik Anda dalam memenuhi kebutuhan kendaraan niaga. Dengan pemahaman mendalam tentang produk Hino serta solusi pembiayaan yang fleksibel, Nathan selalu memberikan pelayanan cepat, ramah, dan tepat sasaran untuk setiap jenis usaha.
+        </p>
+        <p>
+          Komitmen Nathan adalah memberikan lebih dari sekadar penjualan. Ia hadir untuk membangun hubungan jangka panjang dengan pelanggan melalui layanan after-sales yang responsif, konsultasi kebutuhan armada yang akurat, serta penawaran harga terbaik. Percayakan kebutuhan truk Hino Anda kepada Nathan, dan rasakan pengalaman membeli yang aman, nyaman, dan menguntungkan.
+        </p>
             <div class="contact-buttons">
               <a href="https://wa.me/6285975287684" class="btn whatsapp-btn"><i class="fab fa-whatsapp"></i> +62 859-7528-7684</a>
               <a href="mailto:saleshinojabodetabek@gmail.com" class="btn email-btn"><i class="fas fa-envelope"></i> saleshinojabodetabek@gmail.com</a>
@@ -93,7 +97,7 @@
       <img src="img/hino1.jpg" alt="Header Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0;" />
       <div class="container">
         <h2>Solusi Terbaik Kebutuhan Armada Anda</h2>
-        <p>Kami menyediakan truk Hino berkualitas dengan layanan cepat dan dukungan penuh...</p>
+        <p>Kami menyediakan truk Hino berkualitas dengan layanan cepat dan dukungan penuh, memastikan armada Anda selalu siap bekerja maksimal di setiap proyek.</p>
         <a href="#product-carousel" class="btn btn-contact">Browse Catalog</a>
       </div>
     </section>
@@ -114,14 +118,108 @@
       </div>
     </section>
 
-    <!-- Keunggulan Kami -->
-    <section class="advantages">
-      <div class="advantages-container">
-        <div class="advantages-image"><img src="img/worker.png" alt="Worker" /></div>
+  <!-- Keunggulan Kami -->
+  <section class="advantages">
+    <div class="advantages-container">
+        <div class="advantages-image">
+          <img src="img/worker.png" alt="Worker Image" />
+        </div>
         <div class="advantages-content">
           <h2>Program Purna Jual</h2>
-          <!-- Advantage Items -->
-          <div class="advantage-item">... (ISI ITEM SEPERTI PROGRAM SERVICE, ONSITE, DLL) ...</div>
+          
+          <div class="advantage-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#0a1950"
+              stroke-width="2"
+              >
+              <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+                />
+              </svg>
+            
+            <div>
+              <h4>Program Service</h4>
+              <p>
+                Nikmati layanan gratis biaya jasa service berkala untuk setiap pembelian unit Hino tertentu. Pemeriksaan dilakukan oleh teknisi bersertifikat menggunakan suku cadang asli Hino.
+Hemat biaya, kendaraan lebih terawat, performa maksimal.
+              </p>
+            </div>
+          </div>
+
+          <div class="advantage-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#0a1950"
+              stroke-width="2"
+              >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6 5.87v-2a4 4 0 00-3-3.87M16 7a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+            </svg>
+            <div>
+              <h4>Program Suku Cadang</h4>
+              <p>
+                Dapatkan jaminan kualitas dan ketahanan terbaik untuk truk Anda dengan menggunakan suku cadang asli Hino. Kami menyediakan layanan lengkap untuk memastikan setiap komponen kendaraan Anda bekerja secara optimal dan tahan lama.
+              </p>
+            </div>
+          </div>
+          
+          <div class="advantage-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#0a1950"
+              stroke-width="2"
+              >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zm0 0v13m-3.5-3.5L12 21l3.5-3.5"
+                />
+              </svg>
+            <div>
+              <h4>Program On Site Service</h4>
+              <p>
+                Kini, perawatan dan perbaikan truk Hino menjadi lebih praktis dengan layanan On Site Service. Teknisi Hino yang profesional akan datang langsung ke lokasi operasional Anda — menghemat waktu, tenaga, dan biaya operasional.
+              </p>
+            </div>
+          </div>
+          
+          <div class="advantage-item">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#0a1950"
+            stroke-width="2"
+            >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 17H4a1 1 0 01-1-1V6a1 1 0 011-1h11a1 1 0 011 1v10a1 1 0 01-1 1h-1m5 0a2 2 0 100-4h-1m-4 4h6m-1 0a2 2 0 110 4 2 2 0 010-4zM6 17a2 2 0 100 4 2 2 0 000-4z"
+                />
+              </svg>
+              <div>
+              <h4>Pelatihan & Konsultasi</h4>
+              <p>
+                Hino tidak hanya menjual truk, tapi juga memastikan setiap pengguna memahami cara terbaik untuk mengoperasikan dan merawatnya. Melalui program Pelatihan & Konsultasi, kami membekali operator dan manajemen Anda dengan pengetahuan teknis, keselamatan, efisiensi pengoperasian, serta perawatan kendaraan.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
