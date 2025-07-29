@@ -28,13 +28,14 @@
   flex-direction: column;
   width: 300px;
   min-height: 480px;
+  position: relative; /* diperlukan untuk full-link */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efek Hover */
 .blog-post:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Gambar Artikel */
@@ -57,6 +58,8 @@
 .blog-post h2 a {
   text-decoration: none;
   color: #333;
+  position: relative;
+  z-index: 2;
 }
 
 .blog-post h2 a:hover {
@@ -71,11 +74,15 @@
   line-height: 1.6;
   flex-grow: 1;
   min-height: 72px;
+  position: relative;
+  z-index: 2;
 }
 
 /* Tombol Baca Selengkapnya */
 .blog-post .card-footer {
   margin: auto 20px 20px 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .blog-post .card-footer a {
@@ -94,4 +101,13 @@
   font-size: 16px;
   line-height: 1.8;
   color: #333;
+}
+
+/* Full clickable link */
+.blog-post a.full-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  text-indent: -9999px;
+  overflow: hidden;
 }
