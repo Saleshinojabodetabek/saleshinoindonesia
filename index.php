@@ -243,7 +243,8 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
       padding-bottom: 56.25%; /* Rasio 16:9 */
       height: 0;
       overflow: hidden;
-      max-width: 100%;
+      width: 100%;
+      max-width: 800px;
       margin: 20px auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
