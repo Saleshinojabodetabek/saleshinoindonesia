@@ -38,7 +38,7 @@
             <img src="img/logo3.png" alt="Logo Hino" style="height: 60px" />
           </a>
         </div>
-
+        
         <div class="hamburger-menu">&#9776;</div>
 
         <nav class="nav links">
@@ -51,7 +51,7 @@
         </nav>
       </div>
     </header>
-
+    
     <!-- Hero -->
     <section class="hero">
       <div class="slider">
@@ -66,7 +66,7 @@
         <a href="https://wa.me/+6285975287684?text=Halo%20Saya%20Dapat%20Nomor%20Anda%20Dari%20Google" class="btn btn-contact">Hubungi Sekarang</a>
       </div>
     </section>
-
+    
     <!-- About Company -->
     <section class="about-company">
       <div class="container">
@@ -74,10 +74,10 @@
           <div class="text">
             <h2>Sales Hino Indonesia</h2>
             <div class="divider"></div>
-        <p>
-          Nathan, Sales Hino Indonesia yang berpengalaman dan profesional, siap menjadi mitra terbaik Anda dalam memenuhi kebutuhan kendaraan niaga. Dengan pemahaman mendalam tentang produk Hino serta solusi pembiayaan yang fleksibel, Nathan selalu memberikan pelayanan cepat, ramah, dan tepat sasaran untuk setiap jenis usaha.
-        </p>
-        <p>
+            <p>
+              Nathan, Sales Hino Indonesia yang berpengalaman dan profesional, siap menjadi mitra terbaik Anda dalam memenuhi kebutuhan kendaraan niaga. Dengan pemahaman mendalam tentang produk Hino serta solusi pembiayaan yang fleksibel, Nathan selalu memberikan pelayanan cepat, ramah, dan tepat sasaran untuk setiap jenis usaha.
+            </p>
+            <p>
           Komitmen Nathan adalah memberikan lebih dari sekadar penjualan. Ia hadir untuk membangun hubungan jangka panjang dengan pelanggan melalui layanan after-sales yang responsif, konsultasi kebutuhan armada yang akurat, serta penawaran harga terbaik. Percayakan kebutuhan truk Hino Anda kepada Nathan, dan rasakan pengalaman membeli yang aman, nyaman, dan menguntungkan.
         </p>
             <div class="contact-buttons">
@@ -88,20 +88,20 @@
           <div class="image-gallery">
             <img src="img/promohino1.jpg" alt="Promo Hino" />
           </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Hero 2 -->
-    <section class="hero1">
-      <img src="img/hino1.jpg" alt="Header Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0;" />
-      <div class="container">
-        <h2>Solusi Terbaik Kebutuhan Armada Anda</h2>
-        <p>Kami menyediakan truk Hino berkualitas dengan layanan cepat dan dukungan penuh, memastikan armada Anda selalu siap bekerja maksimal di setiap proyek.</p>
-        <a href="#product-carousel" class="btn btn-contact">Browse Catalog</a>
-      </div>
-    </section>
-
+        </section>
+        
+        <!-- Hero 2 -->
+        <section class="hero1">
+          <img src="img/hino1.jpg" alt="Header Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0;" />
+          <div class="container">
+            <h2>Solusi Terbaik Kebutuhan Armada Anda</h2>
+            <p>Kami menyediakan truk Hino berkualitas dengan layanan cepat dan dukungan penuh, memastikan armada Anda selalu siap bekerja maksimal di setiap proyek.</p>
+            <a href="#product-carousel" class="btn btn-contact">Browse Catalog</a>
+          </div>
+        </section>
+        
     <!-- Product Section -->
     <div id="product-carousel"></div>
     <section class="product-carousel">
@@ -117,8 +117,20 @@
         <button class="carousel-btn right">&#10095;</button>
       </div>
     </section>
-
-  <!-- Keunggulan Kami -->
+    
+    <!-- Contact Section -->
+    <div class="contact-container">
+      <div class="contact-tabs"><div class="tab active">Hubungi Kami</div></div>
+      <div class="contact-info">
+        <div class="contact-item"><img src="img/cssupport.png" alt="WhatsApp" /><div><strong>Whatsapp</strong><br />+62 859-7528-7684</div></div>
+        <div class="divider"></div>
+        <div class="contact-item"><img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone" /><div><strong>Phone Call</strong><br />+62 882-1392-5184</div></div>
+        <div class="divider"></div>
+        <div class="contact-item"><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email" /><div><strong>Email</strong><br />saleshinojabodetabek@gmail.com</div></div>
+      </div>
+    </div>
+    
+    <!-- Keunggulan Kami -->
   <section class="advantages">
     <div class="advantages-container">
         <div class="advantages-image">
@@ -224,17 +236,6 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <div class="contact-container">
-      <div class="contact-tabs"><div class="tab active">Hubungi Kami</div></div>
-      <div class="contact-info">
-        <div class="contact-item"><img src="img/cssupport.png" alt="WhatsApp" /><div><strong>Whatsapp</strong><br />+62 859-7528-7684</div></div>
-        <div class="divider"></div>
-        <div class="contact-item"><img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone" /><div><strong>Phone Call</strong><br />+62 882-1392-5184</div></div>
-        <div class="divider"></div>
-        <div class="contact-item"><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email" /><div><strong>Email</strong><br />saleshinojabodetabek@gmail.com</div></div>
-      </div>
-    </div>
 
     <!-- Blog Section -->
     <section class="blog-section">
