@@ -237,9 +237,36 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
     </section>
 
     <!-- Youtube Section -->
-    <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/FgvKuKNTMVk?si=IkUZ_Xu16KkYXmQ1" frameborder="0" allowfullscreen></iframe>
-    </div>
+  <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* Rasio 16:9 */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/FgvKuKNTMVk?si=IkUZ_Xu16KkYXmQ1" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+</body>
 
 
     <!-- Blog Section -->
