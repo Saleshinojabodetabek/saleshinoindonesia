@@ -330,7 +330,7 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
           <h4>HUBUNGI KAMI</h4>
           <p>📞 0859-7528-7684</p>
           <p>📧 saleshinojabodetabek@gmail.com</p>
-          <p>📍 Golf Lake Ruko Venice, Jakarta Barat 11730</p>
+          <p>📍 Golf Lake Ruko Venice, Jl. Lkr. Luar Barat No.78 Blok B, RT.9/RW.14, Cengkareng Tim., Kecamatan Cengkareng, Jakarta</p>
           <div class="footer-social">
             <h4>SOSIAL MEDIA</h4>
             <div class="social-icons">
@@ -342,7 +342,7 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
         </div>
         <div class="footer-section">
           <div class="google-map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.001117199873!2d106.72798237355298!3d-6.130550360104524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f70ab03b3611%3A0x2e6e345ac4d4fd04!2sHINO%20CENGKARENG%20(DGMI)!5e0!3m2!1sid!2sid!4v1752934707067!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
