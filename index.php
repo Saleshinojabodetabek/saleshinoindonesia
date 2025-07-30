@@ -11,7 +11,7 @@
     <meta name="description" content="Dealer Resmi Hino Jakarta. Hubungi : 0859 7528 7684 / 0882 1392 5184 Untuk mendapatkan informasi produk Hino. Layanan Terbaik dan Jaminan Mutu." />
     
     <!-- Meta Keywords -->
-    <meta name="keywords" content="Dealer Hino, Truk Hino, Promo Hino Jakarta, Harga Hino, Hino Dutro, Hino 300, Hino 500, Jual Truk Hino, Hino Jabodetabek" />
+    <meta name="keywords" content="dealer hino indonesia, dealer hino jakarta, sales hino indonesia, sales truck hino jakarta, harga truk hino terbaru, promo truk hino jakarta, jual truk hino, hino 300 series, hino 500 series, cicilan truk hino jabodetabek, penawaran truk hino murah, truk hino dutro, tempat beli truk hino, dealer hino resmi, sales hino jabodetabek">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://saleshinoindonesia.com/" />
