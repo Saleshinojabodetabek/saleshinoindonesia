@@ -3,8 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Title -->
     <title>Dealer Hino Indonesia | Sales Truck Hino Terbaik di Jabodetabek</title>
+
+    <!-- Meta Description -->
     <meta name="description" content="Dealer Resmi Hino Jakarta. Hubungi : 0859 7528 7684 / 0882 1392 5184 Untuk mendapatkan informasi produk Hino. Layanan Terbaik dan Jaminan Mutu." />
+    
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="Dealer Hino, Truk Hino, Promo Hino Jakarta, Harga Hino, Hino Dutro, Hino 300, Hino 500, Jual Truk Hino, Hino Jabodetabek" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://saleshinoindonesia.com/" />
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Dealer Hino Indonesia | Promo & Harga Truk Terbaik" />
+    <meta property="og:description" content="Dapatkan promo truk Hino terbaru di Jakarta. Konsultasi langsung dengan sales profesional. Gratis penawaran & layanan cepat!" />
+    <meta property="og:image" content="https://saleshinoindonesia.com/img/promohino1.jpg" />
+    <meta property="og:url" content="https://saleshinoindonesia.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dealer Hino Indonesia | Promo & Harga Truk Terbaik" />
+    <meta name="twitter:description" content="Hubungi kami untuk mendapatkan penawaran terbaik truk Hino. Layanan cepat & profesional." />
+    <meta name="twitter:image" content="https://saleshinoindonesia.com/img/promohino1.jpg" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/img/favicon.png">
 
     <!-- Font -->
