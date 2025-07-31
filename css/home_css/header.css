@@ -55,14 +55,6 @@ header {
   overflow: hidden;
 }
 
-.hero {
-  background-image: url("/img/header.jpg");
-}
-
-.hero1 {
-  background-image: url("/img/pwb.jpg");
-}
-
 .hero::after,
 .hero1::after {
   content: "";
