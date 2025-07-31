@@ -332,11 +332,17 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
           <p>📍 Golf Lake Ruko Venice, Jl. Lkr. Luar Barat No.78 Blok B, RT.9/RW.14, Cengkareng Tim., Kecamatan Cengkareng, Jakarta</p>
           <div class="footer-social">
             <h4>SOSIAL MEDIA</h4>
-            <div class="social-icons">
-              <a href="https://www.instagram.com/saleshinojabodetabek" target="_blank"><i data-feather="instagram"></i></a>
-              <a href="https://wa.me/+6285975287684?text=Halo%20Saya%20Dapat%20Nomor%20Anda%20Dari%20Google" target="_blank"><i data-feather="phone"></i></a>
-              <a href="https://www.facebook.com/profile.php?id=61573843992250" target="_blank"><i data-feather="facebook"></i></a>
-            </div>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/saleshinojabodetabek" target="_blank" aria-label="Instagram Sales Hino Jabodetabek">
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="https://wa.me/+6285975287684?text=Halo%20Saya%20Dapat%20Nomor%20Anda%20Dari%20Google" target="_blank" aria-label="WhatsApp Sales Hino Jabodetabek">
+              <i data-feather="phone"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61573843992250" target="_blank" aria-label="Facebook Sales Hino Jabodetabek">
+              <i data-feather="facebook"></i>
+            </a>
+          </div>
           </div>
         </div>
         <div class="footer-section">
