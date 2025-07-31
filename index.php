@@ -308,7 +308,7 @@ Hemat biaya, kendaraan lebih terawat, performa maksimal.
               <div class="blog-card-content">
                 <h3><a href="detail_artikel.php?id=<?= $artikel['id'] ?>"><?= htmlspecialchars($artikel['judul']) ?></a></h3>
                 <p><?= substr(strip_tags($artikel['isi']), 0, 100) ?>...</p>
-                <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" class="read-more">Read More</a>
+                <a href="detail_artikel.php?id=<?= $artikel['id'] ?>" class="read-more">Baca Selengkapnya</a>
               </div>
             </div>
           <?php endforeach; } else { echo "<p>Tidak ada artikel ditemukan.</p>"; } ?>
