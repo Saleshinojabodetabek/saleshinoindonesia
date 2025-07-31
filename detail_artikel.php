@@ -81,7 +81,7 @@ if ($id && is_array($data)) {
               <div class="isi-artikel">
                 <?= nl2br($artikel['isi']) ?>
               </div>
-              <a href="artikel.php" class="btn-kembali" style="display:inline-block; margin-top:20px;">← Kembali ke Daftar Artikel</a>
+              <a href="artikel.php" class="btn-kembali" style="display:inline-block; margin-top:20px;">Kembali ke Daftar Artikel</a>
             <?php else: ?>
               <p>Artikel tidak ditemukan.</p>
             <?php endif; ?>

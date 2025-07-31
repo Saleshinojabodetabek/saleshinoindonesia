@@ -167,7 +167,7 @@ $artikel = array_slice($artikelData, $offset, $perPage);
                 </h2>
                 <p><?= substr(strip_tags($row['isi']), 0, 100) ?>...</p>
                 <div class="card-footer">
-                  <a href="detail_artikel.php?id=<?= urlencode($row['id']) ?>">Baca Selengkapnya →</a>
+                  <a href="detail_artikel.php?id=<?= urlencode($row['id']) ?>">Baca Selengkapnya</a>
                 </div>
               </div>
             <?php endforeach; ?>
