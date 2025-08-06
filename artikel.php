@@ -87,6 +87,11 @@ $artikel = array_slice($artikelData, $offset, $perPage);
         color: #fff;
       }
     </style>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
   </head>
   <body>
     <!-- Header -->
