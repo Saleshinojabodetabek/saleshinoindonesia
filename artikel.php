@@ -203,7 +203,7 @@ $artikel = array_slice($artikelData, $offset, $perPage);
           <h4>HUBUNGI KAMI</h4>
           <p>📞 0859-7528-7684</p>
           <p>📧 saleshinojabodetabek@gmail.com</p>
-          <p>📍 Golf Lake Ruko Venice, Jakarta 11730</p>
+          <p>📍 Golf Lake Ruko Venice, Jl. Lkr. Luar Barat No.78 Blok B, RT.9/RW.14, Cengkareng Tim., Kecamatan Cengkareng, Jakarta</p>
           <div class="footer-social" style="margin-top: 20px">
             <h4>SOSIAL MEDIA</h4>
             <div class="social-icons">
@@ -215,7 +215,7 @@ $artikel = array_slice($artikelData, $offset, $perPage);
         </div>
         <div class="footer-section">
           <div class="google-map-container" style="margin-top: 20px">
-            <iframe src="https://www.google.com/maps/embed?..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
           </div>
         </div>
       </div>
