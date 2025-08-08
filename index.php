@@ -55,6 +55,35 @@
     <!-- Scripts -->
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoDealer",
+        "name": "Dealer Hino Indonesia - Jakarta",
+        "image": "https://saleshinoindonesia.com/img/logo3.png",
+        "url": "https://saleshinoindonesia.com",
+        "logo": "https://saleshinoindonesia.com/img/logo3.png",
+        "telephone": "+62-859-7528-7684",
+        "email": "saleshinojabodetabek@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Golf Lake Ruko Venice, Jl. Lkr. Luar Barat No.78 Blok B, RT.9/RW.14, Cengkareng Tim.",
+          "addressLocality": "Jakarta Barat",
+          "addressRegion": "DKI Jakarta",
+          "postalCode": "11730",
+          "addressCountry": "ID"
+        },
+        "openingHours": "Mo-Sa 08:00-17:00",
+        "priceRange": "$$",
+        "sameAs": [
+          "https://www.instagram.com/saleshinojabodetabek",
+          "https://www.facebook.com/profile.php?id=61573843992250",
+          "https://wa.me/6285975287684"
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Header -->
