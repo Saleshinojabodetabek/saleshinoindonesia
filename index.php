@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Title -->
-    <title>Dealer Hino Indonesia | Sales Truck Hino Terbaik di Jabodetabek</title>
+    <title>Dealer Hino Jabodetabek | Sales Truck Hino Terbaik di Indonesia</title>
 
     <!-- Meta Description -->
     <meta name="description" content="Dealer Resmi Hino Jakarta. Hubungi : 0859 7528 7684 / 0882 1392 5184 Untuk mendapatkan informasi produk Hino. Layanan Terbaik dan Jaminan Mutu." />
