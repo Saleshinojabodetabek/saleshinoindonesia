@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$user = 'u868657420_dealerhinojkt';
+$user = 'u868657420_root';
 $pass = 'Natanael110405';
-$db = 'u868657420_dealerhinojkt';
+$db = 'u868657420_db_dealer_hino';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
