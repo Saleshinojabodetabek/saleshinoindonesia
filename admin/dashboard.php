@@ -1,9 +1,7 @@
 <?php
-
 session_start();
 // Include koneksi dan dapatkan variabel $conn
-include "cek_login.php";
-include "config.php";
+$conn = include "koneksi.php";
 
 // Fungsi untuk mendapatkan semua produk
 function getProducts($connection) {
@@ -229,12 +227,12 @@ $products = getProducts($conn);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="panel_artikel.php">
+                        <a class="nav-link" href="dashboard.php">
                             <i class="fas fa-newspaper me-2"></i> Artikel
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="admin_products.php">
                             <i class="fas fa-truck me-2"></i> Produk
                         </a>
                     </li>
