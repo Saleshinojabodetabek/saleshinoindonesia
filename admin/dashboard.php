@@ -227,12 +227,12 @@ $products = getProducts($conn);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.php">
+                        <a class="nav-link" href="panel_artikel.php">
                             <i class="fas fa-newspaper me-2"></i> Artikel
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="admin_products.php">
+                        <a class="nav-link active" href="dashboard.php">
                             <i class="fas fa-truck me-2"></i> Produk
                         </a>
                     </li>
