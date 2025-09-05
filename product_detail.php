@@ -2,8 +2,11 @@
 // File: product_detail.php
 session_start();
 
-include "cek_login.php";
-include "config.php";
+// Koneksi ke database
+$host = 'localhost';
+$user = 'u868657420_root';
+$pass = 'Natanael110405';
+$db = 'u868657420_db_dealer_hino';
 
 // Buat koneksi
 $conn = new mysqli($host, $user, $pass, $db);
