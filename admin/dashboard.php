@@ -1,6 +1,7 @@
 <?php
 session_start();
 // Include koneksi dan dapatkan variabel $conn
+include "login.php"
 $conn = include "koneksi.php";
 
 // Fungsi untuk mendapatkan semua produk
