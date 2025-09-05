@@ -172,11 +172,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     $conn->close();
-    header("Location: admin_products.php");
+    header("Location: dashboard.php");
     exit();
 }
 
 $conn->close();
-header("Location: admin_products.php");
+header("Location: dashboard.php");
 exit();
 ?>
