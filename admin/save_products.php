@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "koneksi.php";
-include "config.php"
 
 // Proses form jika data dikirim
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -173,11 +172,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     $conn->close();
-    header("Location: dashboard.php");
+    header("Location: admin_products.php");
     exit();
 }
 
 $conn->close();
-header("Location: dashboard.php");
+header("Location: admin_products.php");
 exit();
 ?>
