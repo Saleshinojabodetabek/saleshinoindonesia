@@ -1,7 +1,9 @@
 <?php
+
 session_start();
 // Include koneksi dan dapatkan variabel $conn
-$conn = include "koneksi.php";
+include "cek_login.php";
+include "config.php";
 
 // Fungsi untuk mendapatkan semua produk
 function getProducts($connection) {
