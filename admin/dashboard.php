@@ -71,11 +71,11 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         
         if ($stmt->execute()) {
             $_SESSION['message'] = "Produk berhasil dihapus";
-            header("Location: admin_products.php");
+            header("Location: dashboard.php");
             exit();
         } else {
             $_SESSION['error'] = "Gagal menghapus produk: " . $conn->error;
-            header("Location: admin_products.php");
+            header("Location: dashboard.php");
             exit();
         }
     }
@@ -294,7 +294,7 @@ $products = getProducts($conn);
                                         <td><span class="badge bg-<?php echo $prod['is_active'] ? 'success' : 'secondary'; ?>"><?php echo $prod['is_active'] ? 'Aktif' : 'Tidak Aktif'; ?></span></td>
                                         <td><?php echo date('d M Y', strtotime($prod['created_at'])); ?></td>
                                         <td>
-                                            <a href="admin_products.php?action=edit&id=<?php echo $prod['id']; ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                                            <a href="dashboard_products.php?action=edit&id=<?php echo $prod['id']; ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                                             <a href="../product_detail.php?id=<?php echo $prod['id']; ?>" target="_blank" class="btn btn-sm btn-secondary"><i class="fas fa-eye"></i></a>
                                             <a href="#" onclick="confirmDelete(<?php echo $prod['id']; ?>, '<?php echo addslashes($prod['name']); ?>')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                                         </td>
@@ -689,7 +689,7 @@ $products = getProducts($conn);
         // Fungsi konfirmasi hapus
         function confirmDelete(productId, productName) {
             if (confirm(`Apakah Anda yakin ingin menghapus produk "${productName}"?`)) {
-                window.location.href = `admin_products.php?action=delete&id=${productId}`;
+                window.location.href = `dashboard.php?action=delete&id=${productId}`;
             }
         }
 
