@@ -1,0 +1,19 @@
+# Nonaktifkan penjelajahan folder
+Options -Indexes
+
+# Lindungi file sensitif
+<FilesMatch "^(config|koneksi|db|\.env|\.htaccess)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Batasi eksekusi PHP hanya untuk file yang perlu
+<FilesMatch "^(login|logout|cek_login|dashboard|tambah_artikel|edit_artikel|hapus_artikel|proses_.*|change_password|proses_ganti_password)\.php$">
+  Allow from all
+</FilesMatch>
+
+# Blokir file PHP lain agar tidak diakses langsung
+<FilesMatch "\.php$">
+  Order deny,allow
+  Deny from all
+</FilesMatch>

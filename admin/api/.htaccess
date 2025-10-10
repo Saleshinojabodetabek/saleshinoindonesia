@@ -1,0 +1,6 @@
+# Izinkan hanya file API yang sah
+<FilesMatch "\.php$">
+    Allow from all
+</FilesMatch>
+
+Options -Indexes

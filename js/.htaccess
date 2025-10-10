@@ -1,0 +1,9 @@
+# Cegah eksekusi PHP
+
+<FilesMatch "\.php$">
+Deny from all
+</FilesMatch>
+
+# Nonaktifkan penjelajahan folder
+
+Options -Indexes

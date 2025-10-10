@@ -1,0 +1,38 @@
+# Lindungi file konfigurasi sensitif
+<FilesMatch "^(config|koneksi|db|\.env|\.htaccess|\.git|composer)\.(php|txt|json|env|ini)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Nonaktifkan penjelajahan direktori
+Options -Indexes
+
+# Blokir eksekusi file PHP di folder tertentu (misalnya img, css, js, uploads)
+<Directory "img">
+    <FilesMatch "\.php$">
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+<Directory "css">
+    <FilesMatch "\.php$">
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+<Directory "js">
+    <FilesMatch "\.php$">
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+# Redirect ke HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# Blokir akses langsung ke file .htaccess
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>
