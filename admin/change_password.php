@@ -37,7 +37,12 @@ if (!isset($_SESSION['admin'])) {
         <input type="password" name="confirm_password" class="form-control" required>
       </div>
 
-      <button type="submit" class="btn btn-primary w-100">Ganti Password</button>
+      <button type="submit" class="btn btn-primary w-100 mb-3">Ganti Password</button>
+
+      <div class="d-flex justify-content-between">
+        <a href="dashboard.php" class="btn btn-secondary">← Kembali</a>
+        <a href="logout.php" class="btn btn-danger">Logout</a>
+      </div>
     </form>
   </div>
 </body>
