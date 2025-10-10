@@ -12,16 +12,23 @@ $query = "
 $result = $conn->query($query);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
   <title>Dashboard Artikel</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
   <div class="container mt-4">
-    <h2>Daftar Artikel</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Daftar Artikel</h2>
+      <div>
+        <a href="change_password.php" class="btn btn-warning me-2">🔑 Ganti Password</a>
+        <a href="logout.php" class="btn btn-danger">🚪 Logout</a>
+      </div>
+    </div>
+
     <a href="tambah_artikel.php" class="btn btn-success mb-3">+ Tambah Artikel</a>
-    <a href="logout.php" class="btn btn-danger mb-3 float-end">Logout</a>
 
     <table class="table table-bordered table-striped">
       <thead class="table-dark">
@@ -38,7 +45,7 @@ $result = $conn->query($query);
           <tr>
             <td><?= htmlspecialchars($row['judul']) ?></td>
             <td><?= htmlspecialchars($row['nama_kategori'] ?? 'Tidak ada') ?></td>
-            <td><?= $row['tanggal'] ?></td>
+            <td><?= htmlspecialchars($row['tanggal']) ?></td>
             <td>
               <?php 
                 $gambar_path = "uploads/" . $row['gambar'];
