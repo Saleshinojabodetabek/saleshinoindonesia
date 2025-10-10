@@ -1,38 +1,121 @@
-# Lindungi file konfigurasi sensitif
-<FilesMatch "^(config|koneksi|db|\.env|\.htaccess|\.git|composer)\.(php|txt|json|env|ini)$">
-  Order allow,deny
-  Deny from all
+# ============================================
+# 🔰 HINO DEALER INDONESIA - MASTER .HTACCESS
+# ============================================
+
+# ==========================================================
+# 1️⃣ FORCE HTTPS + NON-WWW (https://dealerhinoindonesia.com)
+# ==========================================================
+
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.dealerhinoindonesia\.com [NC]
+RewriteRule ^(.*)$ https://dealerhinoindonesia.com/$1 [L,R=301]
+
+# ============================================
+# 2️⃣ SKIP REWRITE UNTUK FILE / FOLDER ASLI
+# ============================================
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ============================================
+# 3️⃣ SEO FRIENDLY URL
+# ============================================
+
+# --- Hino 300 Series ---
+# Contoh: /hino300/115-sd-std-euro4
+RewriteRule ^hino300/([a-z0-9-]+)/?$ product-detail-hino300.php?slug=$1 [L,QSA]
+
+# --- Hino 500 Series ---
+# Contoh: /hino500/fg-260-js-euro4
+RewriteRule ^hino500/([a-z0-9-]+)/?$ product-detail-hino500.php?slug=$1 [L,QSA]
+
+# --- Hino Bus Series ---
+# Contoh: /hinobus/115-sdb-std-euro4
+RewriteRule ^hinobus/([a-z0-9-]+)/?$ product-detail-hinobus.php?slug=$1 [L,QSA]
+
+# --- Artikel ---
+RewriteRule ^artikel/([a-z0-9-]+)/?$ artikel-detail.php?slug=$1 [L,QSA]
+RewriteRule ^kategori/([a-z0-9-]+)/?$ artikel.php?kategori=$1 [L,QSA]
+
+# ============================================
+# 4️⃣ DEFAULT INDEX FILE
+# ============================================
+
+DirectoryIndex index.php
+
+# ============================================
+# 🔒 ROOT SECURITY CONFIGURATION
+# ============================================
+
+# --- Nonaktifkan directory listing dan eksekusi CGI ---
+Options -Indexes -ExecCGI
+
+# --- Lindungi file konfigurasi sensitif ---
+<FilesMatch "^(config|koneksi|db|\.env|\.git|composer)\.(php|txt|json|env|ini|lock)$">
+  Require all denied
 </FilesMatch>
 
-# Nonaktifkan penjelajahan direktori
-Options -Indexes
+# --- Blokir akses langsung ke file .htaccess dan file tersembunyi ---
+<FilesMatch "^(\.htaccess|\.htpasswd|\.git|\.env)$">
+  Require all denied
+</FilesMatch>
 
-# Blokir eksekusi file PHP di folder tertentu (misalnya img, css, js, uploads)
+# --- Blokir akses file berbahaya atau tidak perlu diakses publik ---
+<FilesMatch "\.(bak|sql|ini|sh|log|conf|env|json|yml|zip|tar|gz|7z)$">
+  Require all denied
+</FilesMatch>
+
+# --- Lindungi direktori sensitif ---
+RewriteRule ^(admin|config|system|private|core|includes)/ - [F,L,NC]
+
+# --- Cegah PHP dieksekusi di folder publik (img, css, js, uploads) ---
 <Directory "img">
-    <FilesMatch "\.php$">
-        Deny from all
+    <FilesMatch "\.ph(p|ar|tml|phtml)$">
+        Require all denied
     </FilesMatch>
 </Directory>
 
 <Directory "css">
-    <FilesMatch "\.php$">
-        Deny from all
+    <FilesMatch "\.ph(p|ar|tml|phtml)$">
+        Require all denied
     </FilesMatch>
 </Directory>
 
 <Directory "js">
-    <FilesMatch "\.php$">
-        Deny from all
+    <FilesMatch "\.ph(p|ar|tml|phtml)$">
+        Require all denied
     </FilesMatch>
 </Directory>
 
-# Redirect ke HTTPS
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+<Directory "uploads">
+    <FilesMatch "\.ph(p|ar|tml|phtml)$">
+        Require all denied
+    </FilesMatch>
+</Directory>
 
-# Blokir akses langsung ke file .htaccess
-<Files .htaccess>
-  Order allow,deny
-  Deny from all
-</Files>
+# --- Tambahan keamanan MIME ---
+AddType text/plain .php .phtml .php3 .php4 .php5 .phps
+
+# --- Deny akses file temp atau hidden ---
+<FilesMatch "(\.(swp|swo|DS_Store|tmp))$">
+Require all denied
+</FilesMatch>
+
+# ============================================
+# 🛡️ EXTRA SECURITY HEADERS
+# ============================================
+
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "no-referrer-when-downgrade"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ============================================
+# ✅ END OF CONFIGURATION
+# ============================================
