@@ -1,7 +1,0 @@
-# Cegah eksekusi PHP di folder upload
-<FilesMatch "\.php$">
-    Deny from all
-</FilesMatch>
-
-# Nonaktifkan penjelajahan folder
-Options -Indexes
