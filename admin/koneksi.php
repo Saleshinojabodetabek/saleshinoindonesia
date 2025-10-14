@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "u868657420_root";
+$user = "u429834259_hinoindonesia";
 $pass = "NatanaelH1no0504@@";
-$db   = "u868657420_db_dealer_hino";
+$db   = "u429834259_hino_indonesia";
 
 // Buat koneksi
 $koneksi = mysqli_connect($host, $user, $pass, $db);
