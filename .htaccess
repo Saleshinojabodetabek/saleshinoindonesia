@@ -10,11 +10,18 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 3️⃣ Blokir akses ke file sensitif
-<FilesMatch "(^\.|config\.php|koneksi\.php|dashboard\.php|cek_login\.php|proses_.*\.php|hapus_.*\.php|edit_.*\.php|tambah_.*\.php)">
+# 3️⃣ Blokir akses ke file sensitif (diperbaiki)
+<FilesMatch "(^\.|config\.php|koneksi\.php|hapus_.*\.php|edit_.*\.php|tambah_.*\.php)">
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+# Izinkan file login & proses login
+<FilesMatch "(cek_login\.php|proses_login\.php)">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
 
 # 4️⃣ Cegah eksekusi PHP di folder upload
 RewriteCond %{REQUEST_URI} ^/admin/api/uploads [NC]
