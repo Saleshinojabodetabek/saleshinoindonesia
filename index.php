@@ -1,13 +1,26 @@
 <?php
-// 🚫 Blokir URL berbahaya seperti index.php?detail/123456
-$query = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
-if (preg_match('#^detail/\d+$#', $query)) {
+// ===========================================================
+// 🚫 BLOKIR LINK MALWARE (index.php?detail/xxxx)
+// ===========================================================
+
+// Gabungkan semua sumber request (QUERY_STRING, REQUEST_URI, PATH_INFO)
+$request = $_SERVER['REQUEST_URI'] ?? '';
+$query   = $_SERVER['QUERY_STRING'] ?? '';
+$path    = $_SERVER['PATH_INFO'] ?? '';
+
+// Jika ditemukan pola ?detail/angka atau /index.php?detail/angka atau /detail/angka
+if (
+    preg_match('#detail/[0-9]+#i', $request) ||
+    preg_match('#detail/[0-9]+#i', $query) ||
+    preg_match('#detail/[0-9]+#i', $path)
+) {
     header("HTTP/1.1 410 Gone");
-    echo "<h1>410 - Halaman sudah dihapus</h1><p>Konten ini tidak tersedia lagi.</p>";
+    header("Content-Type: text/html; charset=UTF-8");
+    echo "<h1>410 - Halaman sudah dihapus</h1>";
+    echo "<p>Konten ini tidak tersedia lagi atau telah dihapus oleh sistem keamanan.</p>";
     exit;
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
