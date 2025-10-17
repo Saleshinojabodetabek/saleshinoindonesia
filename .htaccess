@@ -11,13 +11,13 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # 3️⃣ Blokir akses ke file sensitif (diperbaiki)
-<FilesMatch "(^\.|config\.php|koneksi\.php|hapus_.*\.php|edit_.*\.php|tambah_.*\.php)">
+<FilesMatch "(^\.|config\.php|koneksi\.php)">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
 # Izinkan file login & proses login
-<FilesMatch "(cek_login\.php|proses_login\.php)">
+<FilesMatch "(cek_login\.php|proses_login\.php|hapus_.*\.php|edit_.*\.php|tambah_.*\.php)">
     Order allow,deny
     Allow from all
 </FilesMatch>
