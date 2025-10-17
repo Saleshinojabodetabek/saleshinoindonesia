@@ -1,0 +1,79 @@
+# ==============================
+# SECURITY CONFIG FOR PHP SITE
+# ==============================
+
+# 1. Nonaktifkan directory listing
+Options -Indexes
+
+# 2. Blok akses langsung ke file sensitif
+<FilesMatch "(^\.|config\.php|koneksi\.php|dashboard\.php|cek_login\.php|proses_.*\.php|hapus_.*\.php|edit_.*\.php|tambah_.*\.php)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 3. Cegah eksekusi PHP di folder upload (didefinisikan di bawah)
+<Directory "admin/api/uploads">
+    <FilesMatch "\.(php|php3|php4|php5|phtml|phps)$">
+        Deny from all
+    </FilesMatch>
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
+        Allow from all
+    </FilesMatch>
+</Directory>
+
+# 4. Batasi jenis file upload (khusus untuk keamanan upload)
+<FilesMatch "\.(php|phps|php5|phtml|html|htm|js|css|exe|sh|bat|pl|py|jsp|asp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 5. Nonaktifkan eksekusi PHP di seluruh direktori kecuali yang penting
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Izinkan PHP hanya di folder utama dan admin
+<FilesMatch "(index\.php|artikel\.php|contact\.php|detail_artikel\.php|sitemap-.*\.php|admin/.*\.php)$">
+    <IfModule mod_php7.c>
+        php_flag engine on
+    </IfModule>
+</FilesMatch>
+
+# 6. Lindungi file .htaccess itu sendiri
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# 7. Lindungi robots.txt agar tidak bisa diubah oleh uploader
+<Files "robots.txt">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+</Files>
+
+# 8. Blok request mencurigakan
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Cegah upload script PHP ke folder upload
+RewriteCond %{REQUEST_URI} ^/admin/api/uploads [NC]
+RewriteCond %{REQUEST_FILENAME} \.(php|phps|php5|phtml|html|htm)$ [NC]
+RewriteRule .* - [F,L]
+
+# Cegah akses ke file sistem
+RewriteRule ^(composer\.json|composer\.lock|package\.json|yarn\.lock|\.env|\.git) - [F,L]
+
+# Cegah RFI/LFI & query berbahaya
+RewriteCond %{QUERY_STRING} (\.\./|\.\.\\|/etc/passwd|/bin/bash|base64_encode|eval\(|system\(|shell_exec\() [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# 9. Pastikan header keamanan aktif
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
