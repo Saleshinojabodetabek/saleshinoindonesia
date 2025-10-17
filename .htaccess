@@ -132,21 +132,12 @@ RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F,L]
 </Files>
 
 # ============================================
-# 🚫 BLOKIR LINK ATAU QUERY MENCURIGAKAN (FINAL FIX)
+# 🚫 BLOKIR LINK MALWARE DETAIL FIX (HTACCESS)
 # ============================================
 
-# 🔹 1. Blokir link malware spesifik (410 Gone)
-RewriteCond %{THE_REQUEST} \?detail/(9728894|17259605) [NC,OR]
-RewriteCond %{QUERY_STRING} (^|&)detail/(9728894|17259605) [NC]
-RewriteRule .* - [G,L]
-
-# 🔹 2. Blokir SEMUA pola ?detail/angka
-RewriteCond %{THE_REQUEST} \?detail/[0-9]+ [NC,OR]
-RewriteCond %{QUERY_STRING} (^|&)detail/[0-9]+ [NC,OR]
-RewriteCond %{REQUEST_URI} ^/index\.php$ [NC]
-RewriteRule .* - [G,L]
-
-# 🔹 3. (Tambahan) Blokir permintaan yang memuat “?detail/” di mana pun
+# Blok semua request yang mengandung "index.php?detail/"
 RewriteCond %{THE_REQUEST} \?detail/ [NC,OR]
-RewriteCond %{QUERY_STRING} (^|&)detail/ [NC]
+RewriteCond %{QUERY_STRING} detail/ [NC,OR]
+RewriteCond %{REQUEST_URI} index\.php\?detail/ [NC,OR]
+RewriteCond %{REQUEST_URI} /detail/ [NC]
 RewriteRule .* - [G,L]

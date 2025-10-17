@@ -1,23 +1,25 @@
 <?php
 // ===========================================================
-// 🚫 BLOKIR LINK MALWARE (index.php?detail/xxxx)
+// 🚫 BLOKIR LINK MALWARE - FIX HOSTINGER
 // ===========================================================
 
-// Gabungkan semua sumber request (QUERY_STRING, REQUEST_URI, PATH_INFO)
-$request = $_SERVER['REQUEST_URI'] ?? '';
-$query   = $_SERVER['QUERY_STRING'] ?? '';
-$path    = $_SERVER['PATH_INFO'] ?? '';
+$request_uri = $_SERVER['REQUEST_URI'] ?? '';
+$query       = $_SERVER['QUERY_STRING'] ?? '';
+$path_info   = $_SERVER['PATH_INFO'] ?? '';
 
-// Jika ditemukan pola ?detail/angka atau /index.php?detail/angka atau /detail/angka
 if (
-    preg_match('#detail/[0-9]+#i', $request) ||
+    preg_match('#index\.php\?detail/[0-9]+#i', $request_uri) ||
+    preg_match('#/detail/[0-9]+#i', $request_uri) ||
     preg_match('#detail/[0-9]+#i', $query) ||
-    preg_match('#detail/[0-9]+#i', $path)
+    preg_match('#detail/[0-9]+#i', $path_info)
 ) {
+    // Blokir langsung
     header("HTTP/1.1 410 Gone");
     header("Content-Type: text/html; charset=UTF-8");
+    echo "<!DOCTYPE html><html><head><title>410 Gone</title></head><body>";
     echo "<h1>410 - Halaman sudah dihapus</h1>";
-    echo "<p>Konten ini tidak tersedia lagi atau telah dihapus oleh sistem keamanan.</p>";
+    echo "<p>Konten ini tidak tersedia lagi di situs Sales Hino Indonesia.</p>";
+    echo "</body></html>";
     exit;
 }
 ?>
