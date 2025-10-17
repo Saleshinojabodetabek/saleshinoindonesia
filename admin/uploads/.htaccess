@@ -1,8 +1,8 @@
-# ======================================
+# ===========================
 
-# UPLOADS SECURITY (gambar saja diizinkan)
+# UPLOADS SECURITY
 
-# ======================================
+# ===========================
 
 Options -Indexes
 
@@ -19,7 +19,7 @@ Deny from all
 Allow from all
 </FilesMatch>
 
-# Blok file yang mirip gambar tapi ada PHP (double extension)
+# Blok file yang mirip gambar tapi ada PHP
 
 <FilesMatch ".\*\.(jpg|jpeg|png|gif|webp|svg)\.(php|phps|php5|phtml)$">
 Order allow,deny
