@@ -126,15 +126,13 @@ RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F,L]
 </Files>
 
 # ============================================
-# 🚫 BLOKIR LINK ATAU QUERY MENCURIGAKAN
+# 🚫 BLOKIR LINK ATAU QUERY MENCURIGAKAN (FIXED)
 # ============================================
 
-# Blok akses langsung ke pola "detail/angka" mencurigakan
-RewriteCond %{QUERY_STRING} (^|&)detail/[0-9]+ [NC,OR]
-RewriteCond %{REQUEST_URI} (detail/[0-9]+) [NC]
+# Blokir hanya pola mencurigakan dengan "detail/" di query (bukan semua)
+RewriteCond %{THE_REQUEST} \?detail/[0-9]+ [NC]
 RewriteRule .* - [F,L]
 
-# (Opsional) Blokir seluruh request yang punya pola "detail/" tanpa parameter resmi
-RewriteCond %{REQUEST_URI} ^/index\.php$ [NC]
-RewriteCond %{QUERY_STRING} (detail/) [NC]
+# (Opsional) Blokir akses ke pola tidak wajar seperti /index.php?detail/
+RewriteCond %{QUERY_STRING} (^|&)detail/[0-9]+ [NC]
 RewriteRule .* - [F,L]
