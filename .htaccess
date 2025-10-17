@@ -22,7 +22,6 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     Allow from all
 </FilesMatch>
 
-
 # 4️⃣ Cegah eksekusi PHP di folder upload
 RewriteCond %{REQUEST_URI} ^/admin/api/uploads [NC]
 RewriteCond %{REQUEST_FILENAME} \.(php|php3|php4|php5|phtml|html|htm)$ [NC]
@@ -133,13 +132,17 @@ RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F,L]
 </Files>
 
 # ============================================
-# 🚫 BLOKIR LINK ATAU QUERY MENCURIGAKAN (FIXED)
+# 🚫 BLOKIR LINK ATAU QUERY MENCURIGAKAN (FINAL)
 # ============================================
 
-# Blokir hanya pola mencurigakan dengan "detail/" di query (bukan semua)
-RewriteCond %{THE_REQUEST} \?detail/[0-9]+ [NC]
-RewriteRule .* - [F,L]
+# 🔹 Blokir link malware spesifik (410 Gone)
+RewriteCond %{QUERY_STRING} ^detail/(9728894|17259605)$ [NC]
+RewriteRule ^index\.php$ - [G,L]
 
-# (Opsional) Blokir akses ke pola tidak wajar seperti /index.php?detail/
+# 🔹 Blokir semua pola index.php?detail/angka
 RewriteCond %{QUERY_STRING} (^|&)detail/[0-9]+ [NC]
-RewriteRule .* - [F,L]
+RewriteRule ^index\.php$ - [G,L]
+
+# 🔹 Blokir request aneh yang mengandung ?detail/xxx di URL request
+RewriteCond %{THE_REQUEST} \?detail/[0-9]+ [NC]
+RewriteRule .* - [G,L]

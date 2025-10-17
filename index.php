@@ -1,3 +1,14 @@
+<?php
+// 🚫 Blokir URL berbahaya seperti index.php?detail/123456
+$query = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
+if (preg_match('#^detail/\d+$#', $query)) {
+    header("HTTP/1.1 410 Gone");
+    echo "<h1>410 - Halaman sudah dihapus</h1><p>Konten ini tidak tersedia lagi.</p>";
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
