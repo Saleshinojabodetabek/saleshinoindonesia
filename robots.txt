@@ -1,7 +1,32 @@
+# ============================
+# robots.txt for saleshinoindonesia.com
+# ============================
+
 User-agent: *
+# ❌ Batasi akses ke area sensitif
 Disallow: /admin/
+Disallow: /admin/api/
 Disallow: /uploads/
 Disallow: /.vscode/
-Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
+Disallow: /config.php
+Disallow: /koneksi.php
+Disallow: /proses_*
+Disallow: /edit_*
+Disallow: /hapus_*
+Disallow: /tambah_*
 
+# ✅ Izinkan konten publik
+Allow: /artikel.php
+Allow: /detail_artikel.php
+Allow: /contact.php
+Allow: /index.php
+Allow: /hino300.html
+Allow: /hino500.html
+Allow: /hinobus.html
+
+# ⚙️ Sitemap utama
 Sitemap: https://saleshinoindonesia.com/sitemap-index.xml
+Sitemap: https://saleshinoindonesia.com/sitemap-artikel.php
