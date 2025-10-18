@@ -50,12 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="canonical" href="https://saleshinoindonesia.com/contact.php" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17416562016"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZY8E57Z99"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-17416562016');
+
+      gtag('config', 'G-2ZY8E57Z99');
     </script>
 
     <!-- Open Graph -->
