@@ -150,8 +150,8 @@ $artikel = array_slice($artikelData, $offset, $perPage);
             <option value="">Semua Kategori</option>
             <?php if (is_array($kategoriData)): ?>
               <?php foreach ($kategoriData as $kat): ?>
-                <option value="<?= htmlspecialchars($kat['nama']) ?>" <?= $selectedKategori === $kat['nama'] ? 'selected' : '' ?>>
-                  <?= htmlspecialchars($kat['nama']) ?>
+                <option value="<?= htmlspecialchars($kat['nama_kategori']) ?>" <?= $selectedKategori === $kat['nama_kategori'] ? 'selected' : '' ?>>
+                  <?= htmlspecialchars($kat['nama_kategori']) ?>
                 </option>
               <?php endforeach; ?>
             <?php endif; ?>
